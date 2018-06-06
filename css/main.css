@@ -1,0 +1,143 @@
+:root {
+    --color-main: #3C989E;
+    --color-second: #5DB5A4;
+    --color-third: #F4CDA5;
+    --color-fourth: #F57A82;
+    --color-fifth: #ED5276;
+}
+
+body {
+    /*    overflow-y: hidden;*/
+    font-family: 'Athiti', sans-serif;
+}
+
+section {
+    transition: all 0.3s ease-in-out;
+}
+
+.neon {
+    text-shadow: 0px 0px 1px #3c989e,
+    0px 0px 3px #4F9099,
+    0px 0px 5px #638895,
+    0px 0px 7px #778090,
+    0px 0px 9px #8A788C,
+    0px 0px 11px #9E7187,
+    0px 0px 13px #B26983,
+    0px 0px 15px #C5617E,
+    0px 0px 17px #D9597A,
+    0px 0px 19px #ED5276;
+    color: #3c989e;
+    font-size: 6rem;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Signika', sans-serif;
+}
+
+
+
+
+
+
+/*----------------------------------------*/
+
+/*-----------------LX---------------------*/
+
+/*----------------------------------------*/
+
+.site-wrapper {
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+/*Main*/
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/Main.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main .title-wrapper {
+    width: 200px;
+    position: absolute;
+    left: calc(50% - 100px);
+    top: 35%;
+    text-align: center;
+}
+
+.main .title {
+    font-size: 30px;
+    text-shadow: 1px 1px 0px white;
+}
+
+/*Second*/
+
+.second {
+    height: 100vh;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.second .row {
+    width: 80%;
+}
+
+.second .title {
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+    border: solid 2px var(--color-main);
+}
+
+.second .content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.second .information {
+    height: 40vh;
+    border: solid 2px var(--color-main);
+}
+
+#zw-map {
+    height: 40vh;
+    border: solid 2px #3C989E;
+}
+
+/*Third*/
+
+.third {
+    height: 100vh;
+}
+
+.third .images {
+    height: 60vh;
+    border: solid 2px #3C989E;
+}
+
+.third .date-wrapper {
+    border: solid 2px #3C989E;
+}
+
+.third .date {
+
+    height: 20vh;
+}
+
+.third .text-content {
+    border: solid 2px #3C989E;
+    height: 40vh
+}
