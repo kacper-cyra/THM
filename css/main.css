@@ -4,10 +4,16 @@
     --color-third: #F4CDA5;
     --color-fourth: #F57A82;
     --color-fifth: #ED5276;
+
+    --color-main-06: #3C989E60;
+    --color-second-06: #5DB5A460;
+    --color-third-06: #F4CDA560;
+    --color-fourth-06: #F57A8260;
+    --color-fifth-06: #ED527660;
 }
 
 body {
-    /*    overflow-y: hidden;*/
+    overflow-x: hidden;
     font-family: 'Athiti', sans-serif;
 }
 
@@ -38,7 +44,6 @@ h4,
 h5 {
     font-family: 'Signika', sans-serif;
 }
-
 
 
 
@@ -83,39 +88,76 @@ h5 {
 /*Second*/
 
 .second {
-    height: 100vh;
     display: block;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 2rem;
 }
 
 .second .row {
     width: 80%;
+    height: 75vh;
+    position: relative;
 }
 
 .second .title {
-    width: 100%;
-    text-align: center;
-    margin: 1rem 0;
-    border: solid 2px var(--color-main);
+    position: absolute;
+    top: 2.5%;
+    left: 0.5%;
+    z-index: 2;
 }
 
-.second .content-wrapper {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.after-title {
+    width: 17.5rem;
+    height: 4.25rem;
+    top: 8.5%;
+    left: 0%;
+    position: absolute;
+    background-color: var(--color-fourth);
+    z-index: 1;
 }
 
 .second .information {
-    height: 40vh;
-    border: solid 2px var(--color-main);
+    position: absolute;
+    width: 50%;
+    padding: 2rem 1rem 2rem 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    left: 37.5%;
 }
 
 #zw-map {
-    height: 40vh;
-    border: solid 2px #3C989E;
+    height: 75vh;
+    left: 10%;
+    top: 10%;
+    position: absolute;
+    width: 22vw;
+    background-image: url(../img/map.png);
+    background-size: cover;
 }
+
+.after-map {
+    width: 22rem;
+    height: 10rem;
+    top: 90%;
+    left: 15%;
+    position: absolute;
+    background-color: var(--color-fourth);
+}
+
+
+.back-img {
+    height: 60vh;
+    transform: translateX(calc(-50% + 50vw));
+
+}
+
+.img-wrapper {
+    margin: 5rem 0;
+    width: 100%;
+    height: 60vh;
+}
+
 
 /*Third*/
 
