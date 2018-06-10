@@ -1,7 +1,7 @@
 .burger-wrapper {
     position: fixed;
-    top: calc(50vh - 30px);
-    left: calc(5rem);
+    top: 3rem;
+    left: 300px;
     z-index: 900;
 }
 
@@ -96,7 +96,7 @@
     left: -100vw;
     height: 100vh;
     width: 100%;
-    background-color: white;
+    background-color: #fff;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -116,22 +116,18 @@
 
 .menu-btn a {
     position: relative;
-    font-size: 2.25rem;
-    margin: 1rem 3rem;
+    font-size: 2.5rem;
     font-family: 'Signika', sans-serif;
     color: black;
     z-index: 999;
-    margin: 0 0rem;
     text-align: left;
     cursor: auto !important;
 }
-
 
 .menu-btn a div:hover {
     width: calc(100% + 1rem);
     color: white;
 }
-
 
 .menu-btn a div {
     width: 0px;
@@ -139,50 +135,103 @@
     transition: width 0.4s ease-in-out 0.1s, color 0.2s ease-out;
     white-space: nowrap;
     cursor: pointer;
-
 }
 
 .menu-btn:nth-child(1) {
     position: absolute;
-    left: 10%;
-    top: 10%;
+    top: 25%;
+    left: 5%;
 }
 
 .menu-btn:nth-child(2) {
     position: absolute;
-    left: 70%;
-    top: 15%;
+    top: 31%;
+    left: 5%;
 }
 
 .menu-btn:nth-child(3) {
     position: absolute;
-    left: 40%;
-    top: 25%;
+    top: 37%;
+    left: 5%;
 }
-
 
 .menu-btn:nth-child(4) {
     position: absolute;
-    left: 70%;
-    top: 45%;
+    top: 43%;
+    left: 5%;
 }
-
 
 .menu-btn:nth-child(5) {
     position: absolute;
-    left: 40%;
-    top: 65%;
+    top: 49%;
+    left: 5%;
 }
-
 
 .menu-btn:nth-child(6) {
     position: absolute;
-    left: 15%;
-    top: 45%;
+    top: 55%;
+    left: 5%;
 }
 
 .menu-btn:nth-child(7) {
     position: absolute;
-    left: 10%;
-    top: 85%;
+    top: 61%;
+    left: 5%;
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {
+
+    .menu-btn a {
+        font-size: 2.25rem;
+    }
+
+    .burger-wrapper {
+        position: fixed;
+        top: calc(50vh - 30px);
+        left: calc(5rem);
+        z-index: 900;
+    }
+
+    .menu-btn:nth-child(1) {
+        left: 10%;
+        top: 10%;
+    }
+
+    .menu-btn:nth-child(2) {
+        left: 70%;
+        top: 15%;
+    }
+
+    .menu-btn:nth-child(3) {
+        left: 40%;
+        top: 25%;
+    }
+
+
+    .menu-btn:nth-child(4) {
+        left: 70%;
+        top: 45%;
+    }
+
+
+    .menu-btn:nth-child(5) {
+        left: 40%;
+        top: 65%;
+    }
+
+
+    .menu-btn:nth-child(6) {
+        left: 15%;
+        top: 45%;
+    }
+
+    .menu-btn:nth-child(7) {
+        left: 10%;
+        top: 85%;
+    }
+
 }
