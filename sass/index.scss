@@ -1,0 +1,313 @@
+.main {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/main.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 3;
+
+    .title-wrapper {
+        width: 200px;
+        position: absolute;
+        left: calc(50% - 100px);
+        top: 35%;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 30px;
+        text-shadow: 1px 1px 0px white;
+    }
+}
+
+/*Second*/
+
+.second {
+    display: block;
+    overflow: hidden;
+    margin: 120px 0;
+    width: 100%;
+    position: relative;
+
+    .background {
+        top: 1rem;
+
+        .background-text {
+            font-size: 22.5vw;
+
+            .col {
+                padding: 0;
+                margin: 0;
+                margin-left: -14px !important;
+            }
+        }
+
+    }
+
+    .container {
+        .row {
+            position: relative;
+
+            .title {
+                z-index: 2;
+                position: relative;
+            }
+
+            .content {
+                //padding: 2rem 0rem 2rem 0rem;
+                font-weight: 700;
+                font-size: 1.45rem;
+                padding: 0;
+                margin: 0 0 0 -2px;
+            }
+
+            .zw-map {
+                position: relative;
+                height: 600px;
+                background-image: url(../img/map.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 3;
+            }
+        }
+    }
+}
+
+
+
+/*Third*/
+
+.third {
+    width: 100%;
+    position: relative;
+    margin: 120px 0;
+
+    .background {
+        .background-text {
+            .col {
+                padding: 0;
+                margin: 0;
+                margin-left: -8px !important;
+            }
+        }
+
+    }
+
+
+    .content {
+        position: relative;
+        z-index: 10;
+        font-weight: 700;
+        font-size: 1.45rem;
+        padding: 0;
+        margin: 0;
+
+
+    }
+
+    .photos {
+        position: relative;
+
+        .photo {
+            top: 50px;
+            left: 0px;
+            width: 100%;
+            z-index: 5;
+
+            &:before {
+                background: url(../img/drezno.jpg) 0/contain no-repeat;
+                top: 0;
+                left: 0;
+            }
+
+            &:after {
+                top: 15px;
+                left: 15px;
+                border: 5px solid var(--color-third);
+            }
+        }
+    }
+
+    .info-wrapper {
+        position: relative;
+        left: 0rem;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 5;
+
+        .info {
+            //Ręczna modyfikacja na mobilne
+            position: absolute;
+            right: -202px;
+            top: -60vh;
+            background-color: var(--color-fourth);
+            font-size: 1.45rem;
+            font-weight: 600;
+
+            ul {
+                position: relative;
+
+                li {
+                    span {
+                        position: relative;
+                        z-index: 5;
+
+                        &:after {
+                            content: '';
+                            height: 6px;
+                            left: 10px;
+                            bottom: 6px;
+                            width: 96%;
+                            position: absolute;
+                            background-color: #eee;
+                            z-index: -1
+                        }
+                    }
+
+                    &:first-child {
+                        position: absolute;
+                        top: -47.5px;
+                        left: -10px;
+                        font-size: 2rem;
+
+                        span {
+                            &:after {
+                                content: '';
+                                height: 0;
+                                position: absolute;
+                                background-color: transparent !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fourth {
+    padding: 120px 0;
+    position: relative;
+
+    .background {
+        .background-text {
+            .col {
+                padding: 0;
+                margin: 0;
+                margin-left: -8px !important;
+            }
+        }
+
+    }
+
+    .photo {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+
+        &:before {
+            background: url(../img/pneumatyka.jpg) 0/contain no-repeat;
+            top: 0;
+            left: 0;
+
+
+        }
+
+        &:after {
+            top: -15px;
+            left: -15px;
+            border: 5px solid var(--color-third);
+
+            //transform: rotate(270deg);
+            //transform-origin: left bottom 0px;
+        }
+    }
+
+    .content {
+        position: relative;
+        z-index: 10;
+        font-weight: 700;
+        font-size: 1.45rem;
+        padding: 0;
+        margin: 0;
+
+        .group {
+            position: relative;
+            font-size: 1.6rem;
+            top: 0.5rem;
+
+            &:nth-child(4) {
+                top: 1.5rem !important;
+            }
+        }
+
+    }
+}
+
+.fifth {
+    padding: 120px 0;
+    position: relative;
+
+    .background {
+        .background-text {
+            .col {
+                padding: 0;
+                margin: 0;
+                margin-left: -13px !important;
+            }
+        }
+    }
+
+    .content {
+        font-weight: 700;
+        font-size: 1.45rem;
+    }
+
+    .photos {
+        position: relative;
+
+        .photo {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 5;
+
+
+            &:nth-child(1) {
+                &:before {
+                    background: url(../img/pneumatyka.jpg) 0/contain no-repeat;
+                    top: 0;
+                    left: 0;
+                }
+
+                &:after {
+                    top: -15px;
+                    left: -15px;
+                    border: 5px solid var(--color-third);
+
+                }
+            }
+
+            &:nth-child(1) {
+                &:before {
+                    background: url(../img/pneumatyka.jpg) 0/contain no-repeat;
+                    top: 0;
+                    left: 0;
+                }
+
+                &:after {
+                    top: -15px;
+                    left: -15px;
+                    border: 5px solid var(--color-third);
+
+                }
+            }
+        }
+    }
+}

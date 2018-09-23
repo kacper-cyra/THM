@@ -1,0 +1,47 @@
+.scroll {
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -15px;
+}
+
+.scroll .mouse {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.scroll .wheel {
+    width: 4px;
+    height: 4px;
+    top: 10px;
+    left: 50%;
+    position: absolute;
+    background: white;
+    display: block;
+    border-radius: 50%;
+    margin-left: -2px;
+    animation-name: scroll-wheel;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll-wheel {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate3d(0, 10px, 0);
+        opacity: 0;
+    }
+}

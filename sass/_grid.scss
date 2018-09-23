@@ -1,0 +1,20 @@
+.grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vw;
+    width: 100%;
+    z-index: -10;
+
+    .row {
+
+        .col {
+            height: 100vh;
+            border-left: solid 1px var(--color-third);
+
+            &:last-child {
+                border-right: solid 1px var(--color-third);
+            }
+        }
+    }
+}

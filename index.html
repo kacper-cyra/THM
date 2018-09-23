@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 
 <head>
@@ -7,7 +7,7 @@
     <meta name="Keywords" content="">
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>thm</title>
     <meta name="author" content="Cyranowski Kacper">
     <link href="https://fonts.googleapis.com/css?family=Athiti:200,400|Signika:400,600,700&amp;subset=latin-ext" rel="stylesheet">
@@ -15,6 +15,18 @@
 </head>
 
 <body>
+    <div class="loading">
+        <div class='delay'></div>
+        <div class='delay'></div>
+        <div class='delay'></div>
+        <div class='delay'></div>
+        <div class='delay'></div>
+        <div class='delay'></div>
+        <div class='delay'></div>
+        <div class='delay'></div>
+        <div class='delay'></div>
+        <div class='delay'></div>
+    </div>
     <div class="burger-wrapper">
         <div class="burger">
             <div class="wing"></div>
@@ -22,7 +34,16 @@
             <div class="wing"></div>
         </div>
     </div>
-
+    <div class="grid">
+        <div class="container">
+            <div class="row">
+                <div class="col s3"></div>
+                <div class="col s3"></div>
+                <div class="col s3"></div>
+                <div class="col s3"></div>
+            </div>
+        </div>
+    </div>
     <div class="menu">
         <div class="menu-content row">
             <!--            <div class="col hide-on-small-only m2 l2"></div>-->
@@ -66,7 +87,7 @@
         </div>
     </div>
 
-    <div class="site-wrapper">
+    <main id='index'>
         <section class="main section">
             <div class="title-wrapper">
                 <h1 class="title"></h1>
@@ -77,39 +98,117 @@
                 </div>
             </div>
         </section>
-        <!--z-depth-->
+        <!------------------------------SECOND---------------------------------------->
         <section class="second">
-
-            <div class="row" id="zwickau">
-                <span class="title ">
-                    <h2>O Zwickau</h2>
-                </span>
-                <div class="after-title z-depth-2"></div>
-                <div class="information">
-                    <p>Zwickau ma około 90 tysięcy miesykańców. Jest czwartym co do wielkości miastem w Saksonii w centrum południowo zachodniej części kraju.
-                    </p>
-                    <p>O terytorium Zwickau wspomniano po raz pierwszy w 1118r. Węgiel kamienny był wydobywany tu jak i w okolicy przez prawie 800 lat.
-                    </p>
-                    <p>W 1810 roku urodził się tu słynny na całym świecie "Syn miasta", kompozytor romantyczny Robert Schumann. Miasto jest znane poza granicami jako "automobil" i miasto Roberta Schumanna.</p>
+            <div class="background">
+                <div class="row background-text">
+                    <span class="col s12 text">ZWICKAU</span>
                 </div>
-                <div class="after-map z-depth-1"></div>
-                <div id="zw-map" class="z-depth-2"></div>
-
+            </div>
+            <div class="container">
+                <div class="row" id="zwickau">
+                    <div class="col s12 m5 zw-map"></div>
+                    <div class="col s0 m1"></div>
+                    <div class="content col s12 m6">
+                        <span class="title">
+                            <h2>O Zwickau</h2>
+                        </span>
+                        <p>Zwickau ma około 90 tysiecy mieszkańcow. Jest czwartym co do wielkości miastem w Saksonii w centrum południowo zachodniej części kraju.
+                        </p>
+                        <p>O terytorium Zwickau wspomniano po raz pierwszy w 1118r. Węgiel kamienny był wydobywany tu jak i w okolicy przez prawie 800 lat.
+                        </p>
+                        <p>W 1810 roku urodził się tu słynny na całym świecie "Syn miasta", kompozytor romantyczny Robert Schumann.</p>
+                        <p> Ponadto 21 kwietnia 2016 roku zostalo oficjalnie uznane jako "Reformation City of Europe".
+                        </p>
+                    </div>
+                    <!--                    <div class="open-circle"></div>-->
+                </div>
             </div>
         </section>
-        <div class="img-wrapper">
-            <img class="back-img" src="img/zwickau.png" draggable="false">
-        </div>
-
+        <!------------------------------THIRD---------------------------------------->
         <section class="third">
+            <div class="background">
+                <!--                <div class="container">-->
+                <div class="row background-text">
+                    <span class="col s12 text">WYCIECZKI</span>
+                    <!--                  </div>-->
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="content col s12 m6">
+                        <p>W czasie naszych praktyk zagranicznych zwiedziliśmy wiele zabytków, muzeów oraz różnych innych dostępnych atrakcji, które w czasie wolnym pomogły nam miło i wesoło spędzić czas oraz dowiedzieć się więcej o kulturze i zwyczajach panujących w tej okolicy. </p>
+                    </div>
+                    <div class="col s12 m6 photos">
+                        <div class="photo"></div>
+                    </div>
+                </div>
+                <div class="row info-wrapper">
+                    <div class="info col s12 m4 z-depth-3">
+                        <ul class="list-unstyled">
+                            <li><span>Zwiedziliśmy:</span></li>
+                            <li><span>Drezno</span></li>
+                            <li><span>Muzeum Horcha</span></li>
+                            <li><span>Fabryke volkswagena</span></li>
+                            <li><span>Berlin</span></li>
+                            <li><span>Zwizkau</span></li>
+                            <li><span>Browar w Zwickau</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="fourth">
+            <div class="background">
+                <div class="row background-text">
+                    <span class="col s12 text">ZAJĘCIA</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="photo"></div>
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="content">
+                            <p>Przez 4 tygodnie pod nadzorem swoich opiekunów odbywaliśmy praktykę w FAW Ausbildungszentrum w Zwickau. Ćwiczyliśmy umiejetności z zakresu mechatroniki, informatyki oraz elektroniki.</p>
+                            Pracowaliśmy w dwóch grupach:<br>
+                            <div class="group"><a page='same' href='mechatronicy'>Mechatronicy</a></div>
+                            <div class="group"><a>Elektronicy+Informatycy</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fifth">
+            <div class="background">
+                <div class="row background-text">
+                    <span class="col s12 text">GALERIA</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6 content">
+                        <p>
+                            Zrobiliśmy kilka zdjęć podczas naszego pobytu w niemczech.
+                        </p>
+                        <a href="galeria">Galeria</a>
+                    </div>
+                    <div class="col s12 m6 photos">
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <footer>
-            <div class="triangle"></div>
-            <div class="row">
-                <div class="container">
-                    <div class="col s12 m4 l4">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m3 l3">
                         <ul class="list-unstyled">
                             <li>Zespół Szkół nr3</li>
                             <li>ul. Sandomierska 2</li>
@@ -119,19 +218,49 @@
                             <li>mgr Mariola Lesniewska</li>
                         </ul>
                     </div>
-                    <div class="col s12 m4 l4">
-                        aaaaaaaaaaaaaaaaaaaa
+                    <div class="col s12 m3 l3">
+                        <ul class="list-unstyled">
+                            <li>Partnerzy</li>
+                            <li>Fortbildungsakademie der Wirtschaft (FAW) gGmbH</li>
+                            <li>Akademie Chemitz</li>
+                            <li>Außenstelle Zwickau</li>
+                            <li>Audistrase 9 08058 Zwickau</li>
+                            <li>Koordynator projektu:</li>
+                            <li>Rico Eibisch</li>
+                        </ul>
                     </div>
-                    <div class="col s12 m4 l4">
-                        bbbbbbbbbbbbbbbbbbbbb
+                    <div class="col s12 m3 l3">
+                        <a href="http://zs3ostrowiec.pl/" target="_blank">THM</a>
                     </div>
                 </div>
             </div>
         </footer>
-
-    </div>
-
-    <script src="js/bin/materialize.min.js"></script>
+    </main>
+    <main hidden id='mechatronicy'>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+        <h1>Działa</h1>
+    </main>
+    <main hidden id='galeria'>
+        <h1>Galeria</h1>
+    </main>
+    <script src="js/navigation.js"></script>
+    <script src="js/materialize/bin/materialize.min.js"></script>
     <script src="js/js.js"></script>
     <script src="js/menu.js"></script>
 </body>
