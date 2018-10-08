@@ -10,5 +10,21 @@ footer {
             margin: 0;
             padding: 0;
         }
+
+        /*     .label {
+            position: relative;
+            z-index: 2;
+            color: #fefefe;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 180%;
+                height: 275px;
+                background-color: var(--color-fifth);
+                z-index: -1;
+                left: -100%;
+            }
+        }*/
     }
 }

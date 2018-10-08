@@ -65,7 +65,7 @@ let navigation = {
             item: document.getElementById('index'),
             page: 1
         },
-        gallery: {
+        galeria: {
             name: 'galeria',
             scroll: 0,
             item: document.getElementById('galeria'),
@@ -161,6 +161,7 @@ document.addEventListener('click', (e) => {
         else {
             e.preventDefault()
             let target = e.target.getAttribute('href');
+            console.log(target);
             target = navigation.pages[target];
             history.pushState({
                 page: target.state,

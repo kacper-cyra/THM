@@ -21,8 +21,9 @@ body {
     height: 100%;
 }
 
-section {
-    transition: all 0.3s ease-in-out;
+
+.index section {
+    position: relative;
 }
 
 .background {
@@ -45,6 +46,10 @@ section {
     }
 }
 
+.movable {
+    transition: transform 1.25s ease-out;
+}
+
 h1,
 h2,
 h3,
@@ -61,12 +66,18 @@ main {
 }
 
 
-.open-circle {
+.circle {
     position: absolute;
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    border: solid 5px var(--color-main);
+    border: solid 7px var(--color-fourth);
+    transition: transform 1.25s ease-out,
+        border 1s ease-in-out;
+
+    &:hover {
+        border: solid 7px transparent;
+    }
 }
 
 

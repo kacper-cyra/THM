@@ -82,6 +82,43 @@
                     <a href="#">
                         <div class="bt-back">GALERIA</div>
                     </a>
+                    <!--
+                </div><div class="menu-btn">
+                    <a href="#">
+                        <div class="bt-back">HOME</div>
+                    </a>
+                </div>
+                <div class="menu-btn">
+                    <a href="#zwickau">
+                        <div class="bt-back">ZWICKAU</div>
+                    </a>
+                </div>
+                <div class="menu-btn">
+                    <a href="#">
+                        <div class="bt-back">ZAJĘCIA</div>
+                    </a>
+                </div>
+                <div class="menu-btn">
+                    <a href="#">
+                        <div class="bt-back">MIEJSCE PRACY</div>
+                    </a>
+                </div>
+                <div class="menu-btn">
+                    <a href="#">
+                        <div class="bt-back">UCZESTNICY</div>
+                    </a>
+                </div>
+                <div class="menu-btn">
+                    <a href="#">
+                        <div class="bt-back">WYCIECZKI</div>
+                    </a>
+                </div>
+                <div class="menu-btn">
+                    <a href="#">
+                        <div class="bt-back">GALERIA</div>
+                    </a>
+                </div>
+-->
                 </div>
             </div>
         </div>
@@ -102,14 +139,14 @@
         <section class="second">
             <div class="background">
                 <div class="row background-text">
-                    <span class="col s12 text">ZWICKAU</span>
+                    <span class="col s12 text movable" speed='1'>ZWICKAU</span>
                 </div>
             </div>
             <div class="container">
                 <div class="row" id="zwickau">
-                    <div class="col s12 m5 zw-map"></div>
+                    <div class="col s12 m5 zw-map movable" speed='3'></div>
                     <div class="col s0 m1"></div>
-                    <div class="content col s12 m6">
+                    <div class="content col s12 m6 movable" speed='4'>
                         <span class="title">
                             <h2>O Zwickau</h2>
                         </span>
@@ -121,7 +158,13 @@
                         <p> Ponadto 21 kwietnia 2016 roku zostalo oficjalnie uznane jako "Reformation City of Europe".
                         </p>
                     </div>
-                    <!--                    <div class="open-circle"></div>-->
+                    <div class="circles">
+                        <div class="circle movable" speed='6'></div>
+                        <div class="circle movable" speed='7'></div>
+                        <div class="circle movable" speed='8'></div>
+                        <div class="circle movable" speed='6'></div>
+                        <div class="circle movable" speed='7'></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -130,20 +173,27 @@
             <div class="background">
                 <!--                <div class="container">-->
                 <div class="row background-text">
-                    <span class="col s12 text">WYCIECZKI</span>
+                    <span class="col s12 text movable" speed='1'>WYCIECZKI</span>
                     <!--                  </div>-->
                 </div>
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="content col s12 m6">
+                    <div class="content col s12 m6 movable" speed='4'>
                         <p>W czasie naszych praktyk zagranicznych zwiedziliśmy wiele zabytków, muzeów oraz różnych innych dostępnych atrakcji, które w czasie wolnym pomogły nam miło i wesoło spędzić czas oraz dowiedzieć się więcej o kulturze i zwyczajach panujących w tej okolicy. </p>
                     </div>
-                    <div class="col s12 m6 photos">
+                    <div class="col s12 m6 photos movable" speed='3'>
                         <div class="photo"></div>
                     </div>
+                    <div class="circles">
+                        <div class="circle movable" speed='9'></div>
+                        <div class="circle movable" speed='7'></div>
+                        <div class="circle movable" speed='8'></div>
+                        <div class="circle movable hide-on-small-only" speed='6'></div>
+                        <div class="circle movable" speed='7'></div>
+                    </div>
                 </div>
-                <div class="row info-wrapper">
+                <div class="row info-wrapper movable" speed='6'>
                     <div class="info col s12 m4 z-depth-3">
                         <ul class="list-unstyled">
                             <li><span>Zwiedziliśmy:</span></li>
@@ -156,27 +206,31 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </section>
-
+        <!--FOURTH-->
         <section class="fourth">
             <div class="background">
                 <div class="row background-text">
-                    <span class="col s12 text">ZAJĘCIA</span>
+                    <span class="col s12 text movable" speed='1'>ZAJĘCIA</span>
                 </div>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col s12 m6">
-                        <div class="photo"></div>
+                        <div class="photo movable" speed='2'></div>
                     </div>
                     <div class="col s12 m6">
-                        <div class="content">
+                        <div class="content movable" speed='4'>
                             <p>Przez 4 tygodnie pod nadzorem swoich opiekunów odbywaliśmy praktykę w FAW Ausbildungszentrum w Zwickau. Ćwiczyliśmy umiejetności z zakresu mechatroniki, informatyki oraz elektroniki.</p>
-                            Pracowaliśmy w dwóch grupach:<br>
-                            <div class="group"><a page='same' href='mechatronicy'>Mechatronicy</a></div>
-                            <div class="group"><a>Elektronicy+Informatycy</a></div>
+                            <a href="uczestnicy" page='same'>Uczestnicy</a>
                         </div>
+                    </div>
+                    <div class="circles">
+                        <div class="circle movable" speed='8'></div>
+                        <div class="circle movable" speed='7'></div>
+                        <div class="circle movable" speed='8'></div>
                     </div>
                 </div>
             </div>
@@ -185,56 +239,30 @@
         <section class="fifth">
             <div class="background">
                 <div class="row background-text">
-                    <span class="col s12 text">GALERIA</span>
+                    <span class="col s12 text movable" speed='1'>GALERIA</span>
                 </div>
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col s12 m6 content">
+                    <div class="col s12 m4 content movable" speed='4'>
                         <p>
                             Zrobiliśmy kilka zdjęć podczas naszego pobytu w niemczech.
                         </p>
-                        <a href="galeria">Galeria</a>
+                        <a href="galeria" page='same'>Galeria</a>
                     </div>
-                    <div class="col s12 m6 photos">
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
+                    <div class="col s12 m8 photos">
+                        <div class="movable" speed='6'></div>
+                        <div class="reverse z-depth-3 movable" speed='3'></div>
+                        <div class="z-depth-5 movable" speed='5'></div>
+                    </div>
+                    <div class="circles">
+                        <div class="circle movable" speed='8'></div>
+                        <div class="circle movable" speed='7'></div>
+                        <div class="circle movable" speed='8'></div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 m3 l3">
-                        <ul class="list-unstyled">
-                            <li>Zespół Szkół nr3</li>
-                            <li>ul. Sandomierska 2</li>
-                            <li>27-400 Ostrowiec Św.</li>
-                            <li>tel. 041 2654645</li>
-                            <li>Koordynator projektu:</li>
-                            <li>mgr Mariola Lesniewska</li>
-                        </ul>
-                    </div>
-                    <div class="col s12 m3 l3">
-                        <ul class="list-unstyled">
-                            <li>Partnerzy</li>
-                            <li>Fortbildungsakademie der Wirtschaft (FAW) gGmbH</li>
-                            <li>Akademie Chemitz</li>
-                            <li>Außenstelle Zwickau</li>
-                            <li>Audistrase 9 08058 Zwickau</li>
-                            <li>Koordynator projektu:</li>
-                            <li>Rico Eibisch</li>
-                        </ul>
-                    </div>
-                    <div class="col s12 m3 l3">
-                        <a href="http://zs3ostrowiec.pl/" target="_blank">THM</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </main>
     <main hidden id='mechatronicy'>
         <h1>Działa</h1>
@@ -258,11 +286,48 @@
     </main>
     <main hidden id='galeria'>
         <h1>Galeria</h1>
+        <h1>Galeria</h1>
+        <h1>Galeria</h1>
+        <h1>Galeria</h1>
+        <h1>Galeria</h1>
+        <h1>Galeria</h1>
+        <h1>Galeria</h1>
+        <h1>Galeria</h1>
     </main>
+    <!--FOOTER-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m3 l3 label">
+                    <ul class="list-unstyled">
+                        <li>Zespół Szkół nr3</li>
+                        <li>ul. Sandomierska 2</li>
+                        <li>27-400 Ostrowiec Św.</li>
+                        <li>tel. 041 2654645</li>
+                        <li>Koordynator projektu:</li>
+                        <li>mgr Mariola Lesniewska</li>
+                    </ul>
+                </div>
+                <div class="col s12 m3 l3">
+                    <ul class="list-unstyled">
+                        <li>Partnerzy</li>
+                        <li>Fortbildungsakademie der Wirtschaft (FAW) gGmbH</li>
+                        <li>Akademie Chemitz</li>
+                        <li>Außenstelle Zwickau</li>
+                        <li>Audistrase 9 08058 Zwickau</li>
+                        <li>Koordynator projektu:</li>
+                        <li>Rico Eibisch</li>
+                    </ul>
+                </div>
+                <div class="col s12 m3 l3">
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="js/navigation.js"></script>
+    <script src="js/movement.js"></script>
     <script src="js/materialize/bin/materialize.min.js"></script>
     <script src="js/js.js"></script>
     <script src="js/menu.js"></script>
 </body>
-
 </html>
