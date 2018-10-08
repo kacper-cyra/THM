@@ -431,6 +431,8 @@
 }
 
 @media only screen and (max-width: 500px) {
+
+    //SECOND
     .second {
         margin: 100px 0 120px 0;
 
@@ -445,45 +447,29 @@
             }
         }
 
+        .content {
+            position: relative;
+            top: -80px;
+        }
+
         .circles {
             .circle {
-                &:nth-child(1) {
-                    right: 10px;
-                }
-
-                &:nth-child(2) {
-                    left: 30%;
-                    top: 30%;
-                    z-index: 3;
-                }
-
-                &:nth-child(3) {
-                    left: 0;
-                    top: -25%;
-                    z-index: 3;
-                }
-
                 &:nth-child(4) {
                     left: 70%;
                     top: 45%;
                     z-index: -10;
                 }
-
-                &:nth-child(5) {
-                    left: 10%;
-                    top: 70%;
-                }
             }
         }
     }
 
-
+    //THIRD
     .third {
-        margin: 180px 0 180px 0;
+        margin: 80px 0 250px 0;
 
         .background {
             .background-text {
-                margin-top: -60px;
+                margin-top: -55px;
 
                 .col {
                     margin-left: 0px !important;
@@ -496,85 +482,17 @@
         }
 
         .info-wrapper {
-            position: relative;
-            left: 0rem;
-            top: 400px;
-            width: 100%;
-            margin: 0;
-            z-index: 5;
-
             .info {
-                //Ręczna modyfikacja na mobilne
-                position: absolute;
-                right: -202px;
-                top: -60vh;
-                background-color: var(--color-fourth);
-                font-size: 1.45rem;
-                font-weight: 600;
-
-                ul {
-                    position: relative;
-
-                    li {
-                        span {
-                            position: relative;
-                            z-index: 5;
-
-                            &:after {
-                                content: '';
-                                height: 6px;
-                                left: 10px;
-                                bottom: 6px;
-                                width: 96%;
-                                position: absolute;
-                                background-color: #eee;
-                                z-index: -1
-                            }
-                        }
-
-                        &:first-child {
-                            position: absolute;
-                            top: -47.5px;
-                            left: -10px;
-                            font-size: 2rem;
-
-                            span {
-                                &:after {
-                                    content: '';
-                                    height: 0;
-                                    position: absolute;
-                                    background-color: transparent !important;
-                                }
-                            }
-                        }
-                    }
-                }
+                right: -130px;
+                top: -50px;
             }
         }
 
         .circles {
             .circle {
-                &:nth-child(1) {
-                    right: -3%;
-                    top: -10%
-                }
 
                 &:nth-child(2) {
-                    left: calc(25% - 25px);
-                    top: 50%;
-                    z-index: 3;
-                }
-
-                &:nth-child(3) {
-                    left: -50px;
-                    top: -60%;
-                    z-index: 3;
-                }
-
-                &:nth-child(4) {
-                    left: 50%;
-                    top: 110%;
-                    z-index: -6;
+                    top: 20%;
                 }
 
                 &:nth-child(5) {
@@ -585,4 +503,113 @@
         }
     }
 
+    //FOURTH
+    .fourth {
+        padding: 200px 0 0px 0;
+
+        .background {
+            margin-top: 360px;
+
+            .background-text {
+                .col {
+                    margin-left: 0px !important;
+                }
+            }
+        }
+
+        .photo {
+            top: -10px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            font-weight: 700;
+            font-size: 1.45rem;
+            padding: 0;
+            margin: 0;
+            top: -1rem;
+        }
+
+        .circles {
+            .circle {
+
+                &:nth-child(2) {
+                    left: calc(5% - 25px);
+                }
+
+                &:nth-child(3) {
+                    left: -15%;
+                    top: -65%;
+                    z-index: 3;
+                }
+
+            }
+        }
+
+    }
+
+    //Fifth
+    .fifth {
+        margin: 160px 0 0px 0;
+
+        .background {
+            .background-text {
+                margin-top: -30px;
+
+                .col {
+                    margin-left: 0px !important;
+                }
+            }
+        }
+
+        .photos {
+            position: relative;
+            height: 400px;
+            z-index: 1;
+            top: 60px;
+
+            div {
+                top: 0;
+                left: 0;
+                transition: filter 0.5s ease-in-out, transform 1.5s ease-out;
+
+                &:nth-child(1) {
+                    z-index: 1;
+                    width: 60%;
+                    top: -2rem;
+                    background: url(../img/zwickau_group.jpg) 0/contain no-repeat;
+                }
+
+                &:nth-child(2) {
+                    width: 30%;
+                    z-index: 2;
+                    left: 55%;
+                    top: 0;
+                    background: url(../img/zwickau_las.jpg) 0/contain no-repeat;
+                }
+
+                &:nth-child(3) {
+                    z-index: 3;
+                    width: 50%;
+                    left: 25%;
+                    top: 6rem;
+                    background: url(../img/zwickau_rynek.jpg) 0/contain no-repeat;
+                }
+
+                &:hover {
+                    filter: grayscale(0%);
+                }
+            }
+        }
+
+        .circles {
+            .circle {
+                &:nth-child(2) {
+                    left: calc(90% - 25px);
+                    top: 25%;
+                }
+            }
+        }
+    }
 }

@@ -71,10 +71,10 @@ let navigation = {
             item: document.getElementById('galeria'),
             page: 2
         },
-        mechatronicy: {
-            name: 'mechatronicy',
+        uczestnicy: {
+            name: 'uczestnicy',
             scroll: 0,
-            item: document.getElementById('mechatronicy'),
+            item: document.getElementById('uczestnicy'),
             page: 2
         }
 
