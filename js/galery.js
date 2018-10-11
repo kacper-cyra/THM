@@ -37,7 +37,7 @@
           modal.current = target;
           cache[target] = {
             img: ele, // node element
-            isLoading: 'false'
+            isLoading: false
           };
 
         })
