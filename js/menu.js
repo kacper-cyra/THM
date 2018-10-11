@@ -1,3 +1,4 @@
+'use strict'
 let menuShowed = false;
 let $menu = document.querySelector(".menu");
 let $burger = document.querySelector(".burger");
@@ -8,11 +9,12 @@ document.querySelector(".burger").addEventListener("click", showMenu)
 
 function showMenu() {
     position = window.pageYOffset;
-    if (menuShowed == false) {
+    if (menuShowed === false) {
         $burgerWrapp.classList.add(".burger-rotated");
         $menu.style.top = window.scrollY + "px";
         menuShowed = true;
         document.addEventListener("scroll", blocked);
+        document.querySelector('body').style.overflow = 'hidden';
         document.querySelector(".wing:nth-child(1)").classList.add("upper-wing");
         document.querySelector(".wing:nth-child(2)").classList.add("middle-wing");
         document.querySelector(".wing:nth-child(3)").classList.add("lower-wing");
@@ -20,6 +22,7 @@ function showMenu() {
     } else {
         $burgerWrapp.classList.remove(".burger-rotated");
         document.removeEventListener("scroll", blocked);
+        document.querySelector('body').style.overflow = 'auto';
         document.querySelector(".wing:nth-child(1)").classList.remove("upper-wing");
         document.querySelector(".wing:nth-child(2)").classList.remove("middle-wing");
         document.querySelector(".wing:nth-child(3)").classList.remove("lower-wing");
@@ -31,7 +34,7 @@ function showMenu() {
 function blocked(e) {
     e.preventDefault();
     window.scrollTo(0, position);
-};
+}
 
 //let words = [];
 //let $menuBtns = document.querySelectorAll(".bt-back");
