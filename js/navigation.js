@@ -1,3 +1,4 @@
+'use strict'
 let loading = {
     object: document.querySelector('.loading'),
     slowest: document.querySelector('.loading div:nth-child(7)'),
@@ -99,7 +100,7 @@ let navigation = {
                 document.addEventListener("scroll", blocked);
                 loading.finish();
                 loading.slowest.addEventListener('transitionend', unload);
-            }, 450);
+            }, 550);
         };
 
         function unload() {
@@ -129,7 +130,7 @@ let navigation = {
                 document.addEventListener("scroll", blocked);
                 loading.back();
                 loading.slowest.addEventListener('transitionend', unload);
-            }, 450);
+            }, 550);
         };
 
         function unload() {

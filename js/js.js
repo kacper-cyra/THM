@@ -1,3 +1,4 @@
+'use strict'
 let photos = document.querySelectorAll('.photo, .photos div');
 
 function photoSize() {

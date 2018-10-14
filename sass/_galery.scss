@@ -1,0 +1,123 @@
+#galeria {
+    > container {
+        > row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
+
+    .album {
+        padding: 0.25rem 0.25rem;
+        transition: all 1s ease-in-out;
+
+        > div {
+            position: relative;
+            padding-top: 100%;
+            display: block;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                padding-top: inherit;
+                top: 0;
+
+                background-color: var(--color-fifth);
+                clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+                transition: all 0.6s ease-in-out;
+                opacity: 0.5;
+            }
+
+            &:after {
+                position: absolute;
+                content: attr(text);
+                clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+                width: 100%;
+                height: inherit;
+                transition: all 0.6s ease-in-out;
+                font-size: 60px;
+                display: block;
+                text-align: center;
+                top: calc(50% - 50px);
+                font-weight: 600;
+            }
+
+            &:hover {
+                &:before {
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                }
+
+                &:after {
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            > div {
+                padding-top: calc(200% + 0.5rem);
+            }
+        }
+
+        &:nth-child(2) {
+            > div {
+                padding-top: calc(50% - 0.25rem);
+            }
+        }
+    }
+
+    .zoom-in {
+        width: 100vw;
+        height: 100vh;
+        transition: all 1.5s ease-in-out;
+    }
+
+    .display {
+        position: absolute;
+        z-index: 10;
+        background-color: aqua;
+    }
+
+    .drezno {
+        background-image: url(../img/drezno.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 80% 0;
+    }
+
+    .horch {
+        background-image: url(../img/horch/horch1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 30%;
+    }
+
+    .volk {
+        background-image: url(../img/volt/volt1.jpg);
+        background-repeat: no-repeat;
+        background-size: 180%;
+        background-position: 70% 100%;
+    }
+
+    .berlin {
+        background-image: url(../img/berlin/berlin1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 30%;
+    }
+
+    .praktyka {
+        background-image: url(../img/zajecia/zajecia1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 0;
+    }
+
+    .zwickau {
+        background-image: url(../img/zwickau/zwickau1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 0;
+    }
+}
