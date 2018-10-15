@@ -121,6 +121,5 @@
       display.style.left = '0';
       display.style.top = window.pageYOffset +'px';
       display.style.width = '';
-      display.style.height = '';
-
+      display.style.height = '100vh';
   }
