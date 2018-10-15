@@ -119,7 +119,7 @@
       display.append(clone);
       display.classList.add('zoom-in');
       display.style.left = '0';
-      display.style.top = document.offsetTop + 'px';
+      display.style.top = window.pageYOffset +'px';
       display.style.width = '';
       display.style.height = '';
 
