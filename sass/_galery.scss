@@ -1,6 +1,6 @@
 #galeria {
-    > container {
-        > row {
+    > .container {
+        > .row {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -70,6 +70,7 @@
     .zoom-in {
         width: 100vw;
         height: 100vh;
+        padding: 0;
         transition: all 1.5s ease-in-out;
     }
 
