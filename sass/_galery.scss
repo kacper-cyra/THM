@@ -54,10 +54,8 @@
             }
         }
 
-        &:nth-child(3) {
-            > div {
-                padding-top: calc(200% + 0.5rem);
-            }
+        [size="1-2"] {
+            padding-top: calc(200% + 0.5rem);
         }
 
         &:nth-child(2) {
@@ -69,15 +67,24 @@
 
     .zoom-in {
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         padding: 0;
-        transition: all 1.5s ease-in-out;
+        transition: all 0.8s ease-in-out;
     }
 
-    .display {
+    .display-container {
         position: absolute;
         z-index: 10;
-        background-color: aqua;
+
+        .display {
+            height: inherit;
+            position: relative;
+
+            .bg {
+                height: inherit;
+                background-size: cover;
+            }
+        }
     }
 
     .drezno {

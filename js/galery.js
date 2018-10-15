@@ -1,51 +1,77 @@
   'use strict'
-  let cache = {};
-  let galeria = document.getElementById('galeria');
-  let minatures = document.querySelectorAll('#gallery .zdj');
+  let galeria = {
+      item: document.getElementById('galeria'),
+      displayCon: document.querySelector('#galeria .display-container'),
+      category: document.querySelector('.category'),
+      display: document.querySelector('#galeria .display'),
+      active: {},
+      scroll: 0,
+      zoomIn: (ele) => {
+          let clone = ele.cloneNode(true);
+          clone.classList.add('bg');
+          galeria.scroll = window.pageYOffset;
+          galeria.displayCon.style.left = ele.offsetLeft + 'px';
+          galeria.displayCon.style.top = ele.offsetTop + 'px';
+          galeria.displayCon.style.width = ele.offsetWidth + 'px';
+          galeria.displayCon.style.height = ele.offsetHeight + 'px';
 
-  let modal = {
-      item: document.getElementById('galleryModal'),
-      display: document.getElementById('display'),
-      container: document.getElementById('container'),
-      current: '',
-      size: 'large',
-      open: () => {
-          modal.item.classList.add('open')
+          galeria.display.append(clone);
+          galeria.displayCon.classList.add('zoom-in');
+          galeria.displayCon.style.left = '0';
+          galeria.displayCon.style.top = window.pageYOffset + 'px';
+          galeria.displayCon.style.width = '';
+          galeria.displayCon.style.height = '';
+          setTimeout(() => {
+              galeria.displayCon.style.top = '0px';
+              galeria.category.style.height = '0px'
+          }, 850);
+          history.replaceState({
+              nav: false,
+              name: 'galeria'
+          }, 'page 1', 'galeria');
+          history.pushState({
+              page: 2,
+              nav: false,
+              page: 'galeria',
+          }, '', 'galeria/' + ele.getAttribute('class'));
       },
-      close: () => {
-          modal.item.classList.remove('open')
-      },
-      remove: () => {
-          let children = modal.container.children;
-          children.forEach((item) => {
-              item.remove()
-          });
-      },
-      fetch: (target) => {
-          let url = target
-          let options = {
-              method: 'GET',
-              mode: 'cors',
-              cache: 'default'
-          }
-          fetch(url, options)
-              .then((res) => res.blob())
-              .then((img) => {
-                  let ele = document.createElement('div');
-                  ele.append(img);
+      zoomOut: () => {
+          // console.log(galeria.scroll);
+          galeria.category.style.height = '';
+          galeria.displayCon.style.left = galeria.active.offsetLeft + 'px';
+          galeria.displayCon.style.top = galeria.active.offsetTop + 'px';
+          galeria.displayCon.style.width = galeria.active.offsetWidth + 'px';
+          galeria.displayCon.style.height = galeria.active.offsetHeight + 'px';
+          setTimeout(() => {
+              //animacja scrolla do pozycji okna w której było
+              //problem z brakiem synchronizacji z chowającym się oknem
+              //window.scrollTo(0, (galeria.active.offsetTop - ((window.innerHeight / 2) - (galeria.active.offsetHeight / 2))));
+          }, 1);
+          setTimeout(() => {
+              while (galeria.display.firstChild && galeria.display.removeChild(galeria.display.firstChild));
+              galeria.displayCon.classList.remove('zoom-in');
+              galeria.displayCon.style.width = '';
+              galeria.displayCon.style.height = '';
+          }, 820);
 
-                  modal.current = target;
-                  cache[target] = {
-                      img: ele, // node element
-                      isLoading: false
-                  };
 
-              })
-              .catch((error) => {})
-
-          //   modal.open();  Przenieść do promise w fetchu	
       }
   }
+  let cache = {};
+
+  let plates = document.querySelectorAll('.album >div');
+
+  galeria.item.addEventListener('click', (e) => {
+      let ele = e.target;
+      if (ele.parentNode.classList.contains('album')) {
+          galeria.active = ele;
+          galeria.zoomIn(ele);
+      }
+  })
+
+
+
+
 
   /*gallery.addEventListener('click', (e) => {
       e.preventDefault();
@@ -100,26 +126,47 @@
         window.innerWidth < 1000 ? modal.size = 'medium' : modal.size = 'large';
     })
   */
-  let plates = document.querySelectorAll('.album >div');
 
-  galeria.addEventListener('click', (e) => {
-      let ele = e.target;
-      if (ele.parentNode.classList.contains('album')) {
-          zoomIn(ele);
-      }
-  })
+  /*let modal = {
+       item: document.getElementById('galleryModal'),
+       display: document.getElementById('display'),
+       container: document.getElementById('container'),
+       current: '',
+       size: 'large',
+       open: () => {
+           modal.item.classList.add('open')
+       },
+       close: () => {
+           modal.item.classList.remove('open')
+       },
+       remove: () => {
+           let children = modal.container.children;
+           children.forEach((item) => {
+               item.remove()
+           });
+       },
+       fetch: (target) => {
+           let url = target
+           let options = {
+               method: 'GET',
+               mode: 'cors',
+               cache: 'default'
+           }
+           fetch(url, options)
+               .then((res) => res.blob())
+               .then((img) => {
+                   let ele = document.createElement('div');
+                   ele.append(img);
 
-  function zoomIn(ele) {
-      let display = galeria.querySelector('.display');
-      display.style.left = ele.offsetLeft + 'px';
-      display.style.top = ele.offsetTop + 'px';
-      display.style.width = ele.offsetWidth + 'px';
-      display.style.height = ele.offsetHeight + 'px';
-      let clone = ele.cloneNode(true);
-      display.append(clone);
-      display.classList.add('zoom-in');
-      display.style.left = '0';
-      display.style.top = window.pageYOffset +'px';
-      display.style.width = '';
-      display.style.height = '100vh';
-  }
+                   modal.current = target;
+                   cache[target] = {
+                       img: ele, // node element
+                       isLoading: false
+                   };
+
+               })
+               .catch((error) => {})
+
+           //   modal.open();  Przenieść do promise w fetchu	
+       }
+   }*/

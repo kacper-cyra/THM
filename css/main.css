@@ -63,17 +63,11 @@ main {
   width: 50px;
   border-radius: 50%;
   border: solid 7px var(--color-fourth);
-  -webkit-transition: border 1s ease-in-out,
- -webkit-transform 1.25s ease-out;
-  transition: border 1s ease-in-out,
- -webkit-transform 1.25s ease-out;
-  -o-transition: transform 1.25s ease-out,
- border 1s ease-in-out;
-  transition: transform 1.25s ease-out,
- border 1s ease-in-out;
-  transition: transform 1.25s ease-out,
- border 1s ease-in-out,
- -webkit-transform 1.25s ease-out; }
+  -webkit-transition: border 1s ease-in-out, -webkit-transform 1.25s ease-out;
+  transition: border 1s ease-in-out, -webkit-transform 1.25s ease-out;
+  -o-transition: transform 1.25s ease-out, border 1s ease-in-out;
+  transition: transform 1.25s ease-out, border 1s ease-in-out;
+  transition: transform 1.25s ease-out, border 1s ease-in-out, -webkit-transform 1.25s ease-out; }
   .circle:hover {
     border: solid 7px transparent; }
 
@@ -223,6 +217,9 @@ footer {
     footer .row .col {
       margin: 0;
       padding: 0; }
+  footer .authors {
+    text-align: center;
+    cursor: pointer; }
 
 .burger-wrapper {
   position: fixed;
@@ -488,7 +485,7 @@ footer {
   -ms-transform: translateX(100%) !important;
   transform: translateX(100%) !important; }
 
-#galeria > container > row {
+#galeria > .container > .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -540,23 +537,28 @@ footer {
     #galeria .album > div:hover:after {
       -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
       clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
-  #galeria .album:nth-child(3) > div {
+  #galeria .album [size="1-2"] {
     padding-top: calc(200% + 0.5rem); }
   #galeria .album:nth-child(2) > div {
     padding-top: calc(50% - 0.25rem); }
 
 #galeria .zoom-in {
   width: 100vw;
-  height: 100vh;
-  padding:0;
-  -webkit-transition: all 1.5s ease-in-out;
-  -o-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out; }
+  height: 100%;
+  padding: 0;
+  -webkit-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out; }
 
-#galeria .display {
+#galeria .display-container {
   position: absolute;
-  z-index: 10;
-  background-color: aqua; }
+  z-index: 10; }
+  #galeria .display-container .display {
+    height: inherit;
+    position: relative; }
+    #galeria .display-container .display .bg {
+      height: inherit;
+      background-size: cover; }
 
 #galeria .drezno {
   background-image: url(../img/drezno.jpg);

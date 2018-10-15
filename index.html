@@ -27,13 +27,15 @@
         <div class='delay'></div>
         <div class='delay'></div>
     </div>
-    <div class="burger-wrapper">
-        <div class="burger">
-            <div class="wing"></div>
-            <div class="wing"></div>
-            <div class="wing"></div>
-        </div>
+    <!--
+<div class="burger-wrapper">
+    <div class="burger">
+        <div class="wing"></div>
+        <div class="wing"></div>
+        <div class="wing"></div>
     </div>
+</div>
+-->
     <div class="grid">
         <div class="container">
             <div class="row">
@@ -247,8 +249,11 @@
         <h1>Działa</h1>
     </main>
     <main hidden id='galeria'>
-        <div class="display"></div>
-        <div class="container">
+        <div class="display-container">
+            <div class="display">
+            </div>
+        </div>
+        <div class="container category">
             <div class="row">
                 <div class="album col l4">
                     <div class="drezno" text='Drezno'>
@@ -258,42 +263,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="album col l8" size='2-1'>
-                    <div class="horch" text='Horch'>
+                <div class="album col l8">
+                    <div class="horch" size='2-1' text='Horch'>
                         <div class="album-wraper">
                             <div class="main-photo"></div>
                             <div class="side-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l8">
+                    <div class="row">
+                        <div class="album col l6">
+                            <div class="volk" text='Volkswagen'>
+                                <div class="album-wraper">
+                                    <div class="main-photo"></div>
+                                    <div class="side-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="album col l6">
+                            <!--Zwickau + Browar-->
+                            <div class="zwickau" text='Zwickau'>
+                                <div class="album-wraper">
+                                    <div class="main-photo"></div>
+                                    <div class="side-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="album col l6">
+                            <div class="praktyka" text='praktyka'>
+                                <div class="album-wraper">
+                                    <div class="main-photo"></div>
+                                    <div class="side-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="album col l4">
                     <div class="berlin" size='1-2' text='Berlin'>
-                        <div class="album-wraper">
-                            <div class="main-photo"></div>
-                            <div class="side-bar"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="album col l4">
-                    <div class="volk" text='Volkswagen'>
-                        <div class="album-wraper">
-                            <div class="main-photo"></div>
-                            <div class="side-bar"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="album col l4">
-                    <!--Zwickau + Browar-->
-                    <div class="zwickau" text='Zwickau'>
-                        <div class="album-wraper">
-                            <div class="main-photo"></div>
-                            <div class="side-bar"></div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="album col l4">
-                    <div class="praktyka" text='praktyka'>
                         <div class="album-wraper">
                             <div class="main-photo"></div>
                             <div class="side-bar"></div>
@@ -334,6 +342,7 @@
                 <div class="col s12 m3 l3">
                 </div>
             </div>
+            <div class="authors">Autorzy</div>
         </div>
     </footer>
     <script src="js/navigation.js"></script>

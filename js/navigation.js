@@ -21,7 +21,7 @@ let loading = {
     },
     setHeight: () => {
         loading.object.style.top = navigation.pages[navigation.active].scroll + 'px';
-        console.log(navigation.pages[navigation.active].scroll + 'px');
+        //    console.log(navigation.pages[navigation.active].scroll + 'px');
     },
     setLeft: () => {
         let items = document.querySelectorAll('.loading .delay');
@@ -143,9 +143,14 @@ let navigation = {
 }
 
 window.onpopstate = (e) => {
-    console.log(e.state);
-    if (e.state.page < navigation.pages[navigation.active].page) {
-        console.log(navigation.pages[navigation.active]);
+    //  console.log(e.state);
+    //Jeśli przekierowanie bez animacji przejścia
+    if (e.state.nav === false) {
+        if (e.state.name === 'galeria') {
+            galeria.zoomOut();
+        } else return 0;
+    } else if (e.state.page < navigation.pages[navigation.active].page) {
+        // console.log(navigation.pages[navigation.active]);
         navigation.animateBackwards(e.state);
     } else {
         navigation.animateTo(e.state);
@@ -162,9 +167,10 @@ document.addEventListener('click', (e) => {
         else {
             e.preventDefault()
             let target = e.target.getAttribute('href');
-            console.log(target);
+            // console.log(target);
             target = navigation.pages[target];
             history.pushState({
+                nav: true,
                 page: target.state,
                 name: target.name
             }, '', target.name);
@@ -175,5 +181,6 @@ document.addEventListener('click', (e) => {
 
 history.replaceState({
     page: 1,
+    nav: true,
     name: 'index'
 }, 'page 1', 'index.html');
