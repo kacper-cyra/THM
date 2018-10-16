@@ -8,6 +8,10 @@
     z-index: -1;
 }
 
+.onTop {
+    z-index: 100;
+}
+
 .loading div {
     transform: translateX(-100%);
     background-color: var(--color-fourth);

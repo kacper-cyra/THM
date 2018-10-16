@@ -14,8 +14,8 @@
 
 </head>
 
-<body>
-    <div class="loading">
+<body class='no-flow'>
+    <div class="loading loading-animation onTop">
         <div class='delay'></div>
         <div class='delay'></div>
         <div class='delay'></div>
@@ -227,8 +227,39 @@
                 </div>
             </div>
         </section>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m3 l3 label">
+                        <ul class="list-unstyled">
+                            <li>Zespół Szkół nr3</li>
+                            <li>ul. Sandomierska 2</li>
+                            <li>27-400 Ostrowiec Św.</li>
+                            <li>tel. 041 2654645</li>
+                            <li>Koordynator projektu:</li>
+                            <li>mgr Mariola Lesniewska</li>
+                        </ul>
+                    </div>
+                    <div class="col s12 m3 l3">
+                        <ul class="list-unstyled">
+                            <li>Partnerzy</li>
+                            <li>Fortbildungsakademie der Wirtschaft (FAW) gGmbH</li>
+                            <li>Akademie Chemitz</li>
+                            <li>Außenstelle Zwickau</li>
+                            <li>Audistrase 9 08058 Zwickau</li>
+                            <li>Koordynator projektu:</li>
+                            <li>Rico Eibisch</li>
+                        </ul>
+                    </div>
+                    <div class="col s12 m3 l3">
+                    </div>
+                </div>
+                <div class="authors">Autorzy</div>
+            </div>
+        </footer>
+
     </main>
-    <main hidden id='uczestnicy'>
+    <main id='uczestnicy'>
         <h1>Działa</h1>
         <h1>Działa</h1>
         <h1>Działa</h1>
@@ -248,7 +279,7 @@
         <h1>Działa</h1>
         <h1>Działa</h1>
     </main>
-    <main hidden id='galeria'>
+    <main id='galeria'>
         <div class="display-container">
             <div class="display">
             </div>
@@ -256,7 +287,7 @@
         <div class="container category">
             <div class="row">
                 <div class="album col l4">
-                    <div class="drezno" text='Drezno'>
+                    <div class="drezno plate" text='Drezno'>
                         <div class="album-wraper">
                             <div class="main-photo"></div>
                             <div class="side-bar"></div>
@@ -264,7 +295,7 @@
                     </div>
                 </div>
                 <div class="album col l8">
-                    <div class="horch" size='2-1' text='Horch'>
+                    <div class="horch plate" size='x2' text='Horch'>
                         <div class="album-wraper">
                             <div class="main-photo"></div>
                             <div class="side-bar"></div>
@@ -274,7 +305,7 @@
                 <div class="col l8">
                     <div class="row">
                         <div class="album col l6">
-                            <div class="volk" text='Volkswagen'>
+                            <div class="volk plate" text='Volkswagen'>
                                 <div class="album-wraper">
                                     <div class="main-photo"></div>
                                     <div class="side-bar"></div>
@@ -283,7 +314,7 @@
                         </div>
                         <div class="album col l6">
                             <!--Zwickau + Browar-->
-                            <div class="zwickau" text='Zwickau'>
+                            <div class="zwickau plate" text='Zwickau' size='x2'>
                                 <div class="album-wraper">
                                     <div class="main-photo"></div>
                                     <div class="side-bar"></div>
@@ -291,7 +322,7 @@
                             </div>
                         </div>
                         <div class="album col l6">
-                            <div class="praktyka" text='praktyka'>
+                            <div class="praktyka plate" text='praktyka'>
                                 <div class="album-wraper">
                                     <div class="main-photo"></div>
                                     <div class="side-bar"></div>
@@ -301,7 +332,7 @@
                     </div>
                 </div>
                 <div class="album col l4">
-                    <div class="berlin" size='1-2' text='Berlin'>
+                    <div class="berlin plate" size='y2' text='Berlin'>
                         <div class="album-wraper">
                             <div class="main-photo"></div>
                             <div class="side-bar"></div>
@@ -315,39 +346,10 @@
 
 
     <!--FOOTER-->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m3 l3 label">
-                    <ul class="list-unstyled">
-                        <li>Zespół Szkół nr3</li>
-                        <li>ul. Sandomierska 2</li>
-                        <li>27-400 Ostrowiec Św.</li>
-                        <li>tel. 041 2654645</li>
-                        <li>Koordynator projektu:</li>
-                        <li>mgr Mariola Lesniewska</li>
-                    </ul>
-                </div>
-                <div class="col s12 m3 l3">
-                    <ul class="list-unstyled">
-                        <li>Partnerzy</li>
-                        <li>Fortbildungsakademie der Wirtschaft (FAW) gGmbH</li>
-                        <li>Akademie Chemitz</li>
-                        <li>Außenstelle Zwickau</li>
-                        <li>Audistrase 9 08058 Zwickau</li>
-                        <li>Koordynator projektu:</li>
-                        <li>Rico Eibisch</li>
-                    </ul>
-                </div>
-                <div class="col s12 m3 l3">
-                </div>
-            </div>
-            <div class="authors">Autorzy</div>
-        </div>
-    </footer>
+    <script src="js/materialize/bin/materialize.min.js"></script>
+    <script src='js/bodyScrollLock.js'></script>
     <script src="js/navigation.js"></script>
     <script src="js/movement.js"></script>
-    <script src="js/materialize/bin/materialize.min.js"></script>
     <script src="js/js.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/galery.js"></script>

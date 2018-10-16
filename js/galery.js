@@ -7,33 +7,40 @@
       active: {},
       scroll: 0,
       zoomIn: (ele) => {
-          let clone = ele.cloneNode(true);
-          clone.classList.add('bg');
-          galeria.scroll = window.pageYOffset;
-          galeria.displayCon.style.left = ele.offsetLeft + 'px';
-          galeria.displayCon.style.top = ele.offsetTop + 'px';
-          galeria.displayCon.style.width = ele.offsetWidth + 'px';
-          galeria.displayCon.style.height = ele.offsetHeight + 'px';
+          //Kopiowanie elementu do display
+          /* let clone = ele.cloneNode(true);
+           clone.classList.add('bg');
+           clone.style.padding = '0px';
+           galeria.scroll = window.pageYOffset;
+           galeria.displayCon.style.left = ele.offsetLeft + 'px';
+           galeria.displayCon.style.top = ele.offsetTop + 'px';
+           galeria.displayCon.style.width = ele.offsetWidth + 'px';
+           galeria.displayCon.style.height = ele.offsetHeight + 'px';
 
-          galeria.display.append(clone);
-          galeria.displayCon.classList.add('zoom-in');
-          galeria.displayCon.style.left = '0';
-          galeria.displayCon.style.top = window.pageYOffset + 'px';
-          galeria.displayCon.style.width = '';
-          galeria.displayCon.style.height = '';
-          setTimeout(() => {
-              galeria.displayCon.style.top = '0px';
-              galeria.category.style.height = '0px'
-          }, 850);
-          history.replaceState({
-              nav: false,
-              name: 'galeria'
-          }, 'page 1', 'galeria');
-          history.pushState({
-              page: 2,
-              nav: false,
-              page: 'galeria',
-          }, '', 'galeria/' + ele.getAttribute('class'));
+           galeria.display.append(clone);
+           galeria.displayCon.classList.add('zoom-in');
+           galeria.displayCon.style.left = '0';
+           galeria.displayCon.style.top = window.pageYOffset + 'px';
+           galeria.displayCon.style.width = '';
+           galeria.displayCon.style.height = '';
+           setTimeout(() => {
+               galeria.displayCon.style.top = '0px';
+               galeria.category.style.height = '0px'
+           }, 900);
+           history.replaceState({
+               nav: false,
+               name: 'galeria'
+           }, 'page 1', 'galeria');
+           history.pushState({
+               page: 2,
+               nav: false,
+               page: 'galeria',
+           }, '', 'galeria/' + ele.getAttribute('class'));*/
+          //Powiększanie zdjęcia
+          ele.classList.remove('plate');
+          ele.classList.add('aaa');
+
+          ele.style.top = window.pageYOffset + 'px';
       },
       zoomOut: () => {
           // console.log(galeria.scroll);
@@ -59,7 +66,12 @@
   }
   let cache = {};
 
-  let plates = document.querySelectorAll('.album >div');
+  let plates = document.querySelectorAll('#galeria .plate');
+  plates.forEach((item) => {
+      item.getAttribute('size') === 'x2' ? item.style.height = (item.offsetWidth / 2) + 'px' : 0;
+      item.getAttribute('size') === 'y2' ? item.style.height = (item.offsetWidth * 2) + 'px' : 0;
+      item.getAttribute('size') ? 0 : item.style.height = item.offsetWidth + 'px';
+  });
 
   galeria.item.addEventListener('click', (e) => {
       let ele = e.target;

@@ -10,6 +10,9 @@
   --color-fourth-06: #F57A8260;
   --color-fifth-06: #ED527660; }
 
+.no-flow {
+  overflow: hidden; }
+
 body {
   overflow-x: hidden;
   font-family: 'Athiti', sans-serif;
@@ -408,6 +411,9 @@ footer {
   overflow: hidden;
   z-index: -1; }
 
+.onTop {
+  z-index: 100; }
+
 .loading div {
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
@@ -485,29 +491,28 @@ footer {
   -ms-transform: translateX(100%) !important;
   transform: translateX(100%) !important; }
 
-#galeria > .container > .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
-
 #galeria .album {
   padding: 0.25rem 0.25rem;
   -webkit-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out; }
-  #galeria .album > div {
+  transition: all 1s ease-in-out;
+  /*    [size="1-2"] {
+            padding-top: calc(200% + 0.5rem);
+        }
+
+        &:nth-child(2) {
+            > div {
+                padding-top: calc(50% - 0.25rem);
+            }
+        }*/ }
+  #galeria .album > .plate {
     position: relative;
-    padding-top: 100%;
-    display: block; }
-    #galeria .album > div:before {
+    cursor: pointer; }
+    #galeria .album > .plate:before {
       content: '';
       position: absolute;
       width: 100%;
-      padding-top: inherit;
+      height: inherit;
       top: 0;
       background-color: var(--color-fifth);
       -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
@@ -516,7 +521,7 @@ footer {
       -o-transition: all 0.6s ease-in-out;
       transition: all 0.6s ease-in-out;
       opacity: 0.5; }
-    #galeria .album > div:after {
+    #galeria .album > .plate:after {
       position: absolute;
       content: attr(text);
       -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
@@ -526,24 +531,20 @@ footer {
       -webkit-transition: all 0.6s ease-in-out;
       -o-transition: all 0.6s ease-in-out;
       transition: all 0.6s ease-in-out;
-      font-size: 60px;
+      font-size: 55px;
       display: block;
       text-align: center;
-      top: calc(50% - 50px);
+      top: calc(50% - 43px);
       font-weight: 600; }
-    #galeria .album > div:hover:before {
+    #galeria .album > .plate:hover:before {
       -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
       clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
-    #galeria .album > div:hover:after {
+    #galeria .album > .plate:hover:after {
       -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
       clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
-  #galeria .album [size="1-2"] {
-    padding-top: calc(200% + 0.5rem); }
-  #galeria .album:nth-child(2) > div {
-    padding-top: calc(50% - 0.25rem); }
 
 #galeria .zoom-in {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   padding: 0;
   -webkit-transition: all 0.8s ease-in-out;
@@ -559,6 +560,16 @@ footer {
     #galeria .display-container .display .bg {
       height: inherit;
       background-size: cover; }
+
+#galeria .aaa {
+  -webkit-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  left: 0; }
 
 #galeria .drezno {
   background-image: url(../img/drezno.jpg);

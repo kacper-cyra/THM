@@ -3,21 +3,25 @@ let loading = {
     object: document.querySelector('.loading'),
     slowest: document.querySelector('.loading div:nth-child(7)'),
     status: 'left',
+    eventListener: () => {
+        bodyScrollLock.enableBodyScroll(loading.object);
+        loading.slowest.removeEventListener('transitionend', loading.eventListener);
+    },
     start: () => {
         loading.object.classList.add('loading-animation');
-        document.addEventListener("scroll", blocked);
+        bodyScrollLock.disableBodyScroll(loading.object);
     },
     finish: () => {
         loading.object.classList.add('loading-finish');
-        document.removeEventListener("scroll", blocked);
+        loading.slowest.addEventListener('transitionend', loading.eventListener);
     },
     reverseFinish: () => {
         loading.object.classList.remove('loading-finish');
-        document.addEventListener("scroll", blocked);
+        bodyScrollLock.disableBodyScroll(loading.object);
     },
     back: () => {
         loading.object.classList.remove('loading-animation');
-        document.removeEventListener("scroll", blocked);
+        loading.slowest.addEventListener('transitionend', loading.eventListener);
     },
     setHeight: () => {
         loading.object.style.top = navigation.pages[navigation.active].scroll + 'px';

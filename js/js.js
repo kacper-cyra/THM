@@ -1,4 +1,5 @@
 'use strict'
+let body = document.querySelector('body');
 let photos = document.querySelectorAll('.photo, .photos div');
 
 function photoSize() {
@@ -12,3 +13,10 @@ function photoSize() {
 }
 photoSize();
 window.addEventListener('resize', photoSize);
+
+window.addEventListener('load', () => {
+    document.getElementById('uczestnicy').setAttribute('hidden', '');
+    document.getElementById('galeria').setAttribute('hidden', '');
+    loading.object.classList.remove('loading-animation');
+    document.querySelector('body').classList.remove('no-flow');
+})
