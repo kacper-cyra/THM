@@ -84,16 +84,20 @@ let navigation = {
         }
 
     },
+    //Animacja z lewej do prawej
     animateTo: (target) => {
         position = window.pageYOffset;
         loading.status == 'left' ? 0 : loading.setLeft();
         loading.setHeight();
         loading.object.style.zIndex = '30';
+        //Dodaje blokade scrolla
         loading.start();
         loading.slowest.addEventListener('transitionend', load);
 
         function load() {
-            document.removeEventListener("scroll", blocked);
+           // document.removeEventListener("scroll", blocked);
+           //Usuwamsvrollblocka
+           bodyScrollLock.enableBodyScroll(loading.object);
             loading.slowest.removeEventListener('transitionend', load);
             navigation.pages[navigation.active].item.setAttribute('hidden', '');
             navigation.active = target.name;
@@ -101,7 +105,9 @@ let navigation = {
             loading.object.style.top = '0px';
             document.getElementById(target.name).removeAttribute('hidden');
             setTimeout(() => {
-                document.addEventListener("scroll", blocked);
+                //Dodaje blokowanie scrolla
+               // document.addEventListener("scroll", blocked);
+                bodyScrollLock.disableBodyScroll(loading.object);
                 loading.finish();
                 loading.slowest.addEventListener('transitionend', unload);
             }, 550);
@@ -114,6 +120,7 @@ let navigation = {
         };
         loading.status = 'right';
     },
+    //Animacja z prawej do lewej
     animateBackwards: (target) => {
         position = window.pageYOffset;
         loading.status == 'right' ? 0 : loading.setRight();
@@ -123,7 +130,8 @@ let navigation = {
         loading.slowest.addEventListener('transitionend', load);
 
         function load() {
-            document.removeEventListener("scroll", blocked);
+           // document.removeEventListener("scroll", blocked);
+            bodyScrollLock.disableBodyScroll(loading.object);
             document.getElementById(target.name).removeAttribute('hidden');
             navigation.pages[navigation.active].item.setAttribute('hidden', '');
             loading.slowest.removeEventListener('transitionend', load);
@@ -131,14 +139,15 @@ let navigation = {
             loading.setHeight();
             window.scrollTo(0, navigation.pages[navigation.active].scroll);
             setTimeout(() => {
-                document.addEventListener("scroll", blocked);
+                bodyScrollLock.disableBodyScroll(loading.object);
+               // document.addEventListener("scroll", blocked);
                 loading.back();
                 loading.slowest.addEventListener('transitionend', unload);
             }, 550);
         };
 
         function unload() {
-            document.removeEventListener("scroll", blocked);
+          //  document.removeEventListener("scroll", blocked);
             loading.object.style.zIndex = '-1';
             loading.slowest.removeEventListener('transitionend', unload);
         };
