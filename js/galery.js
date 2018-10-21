@@ -127,8 +127,8 @@
               //Sprawdza, czy zdjęcie nie jest załadowane
               if (!ele.style.backgroundImage) {
                   console.log('loading');
-                  console.log('url(../img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)')
-                  ele.style.backgroundImage = 'url(../img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)';
+                  console.log('url(img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)')
+                  ele.style.backgroundImage = 'url(img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)';
                   console.log(ele);
                   ele.addEventListener('load', lazyLoad.loadedPhoto);
               } else {
