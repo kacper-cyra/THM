@@ -17,7 +17,7 @@ window.addEventListener('resize', photoSize);
 window.addEventListener('load', () => {
     document.getElementById('uczestnicy').setAttribute('hidden', '');
     document.getElementById('galeria').setAttribute('hidden', '');
-    loading.object.classList.remove('loading-animation');
+    loading.back();
     document.querySelector('body').classList.remove('no-flow');
     lazyLoad.loadingPhoto();
 })

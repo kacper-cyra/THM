@@ -4,19 +4,31 @@ let loading = {
     slowest: document.querySelector('.loading div:nth-child(7)'),
     status: 'left',
     start: () => {
+        loading.object.classList.add('onTop');
         loading.object.classList.add('loading-animation');
     },
     finish: () => {
         loading.object.classList.add('loading-finish');
+        loading.slowest.addEventListener('transitionend', hide);
+
+        function hide() {
+            loading.object.classList.remove('onTop');
+            loading.slowest.removeEventListener('transitionend', hide);
+        }
     },
     reverseFinish: () => {
+        loading.object.classList.add('onTop');
         loading.object.classList.remove('loading-finish');
     },
     back: () => {
         loading.object.classList.remove('loading-animation');
+
+        function hide() {
+            loading.object.classList.remove('onTop');
+            loading.slowest.removeEventListener('transitionend', hide);
+        }
     },
     setHeight: () => {
-        console.log(navigation.pages[navigation.active].scroll + 'px');
         loading.object.style.top = navigation.pages[navigation.active].scroll + 'px';
     },
     setLeft: () => {
@@ -112,7 +124,6 @@ let navigation = {
     },
     //Animacja z prawej do lewej
     animateBackwards: (target) => {
-        console.log(target);
         loading.status == 'right' ? 0 : loading.setRight();
         loading.setHeight();
         loading.object.style.zIndex = '30';

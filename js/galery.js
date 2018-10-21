@@ -90,10 +90,29 @@
       if (ele.parentNode.classList.contains('album')) {
           galeria.active = ele;
           galeria.zoomIn(ele);
+      } else if (ele.getAttribute('photo')) {
+          changePhoto(ele);
       }
   })
 
+
+  //--------------------  
+  //Obsługa menu
+  //--------------------
+  function changePhoto(ele) {
+      let style = ele.currentStyle || window.getComputedStyle(ele, false);
+      let url = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+      console.log(url);
+      let $next = galeria.bg.querySelector('.next');
+      $next.style.backgroundImage = 'url(' + url + ')';
+      ele.getAttribute('vertical') ? $next.style.backgroundSize = 'contain' : $next.style.backgroundSize = 'cover';
+      //$next.style.backgroundSize = 'contain';
+      $next.style.opacity = '1';
+  }
+
+  //----------------------
   //Lazy Load
+  //----------------------
   let lazyLoad = {
       loading: ['drezno', 0],
       priority: false,
@@ -125,9 +144,7 @@
           if (lazyLoad[lazyLoad.loading[0]][lazyLoad.loading[1]]) {
               let ele = lazyLoad[lazyLoad.loading[0]][lazyLoad.loading[1]];
               //Sprawdza, czy zdjęcie nie jest załadowane
-              //  console.log(ele.style.backgroundImage);
               if (ele.style.backgroundImage === '') {
-                  console.log(ele);
                   let load = document.createElement('img');
                   let src = 'img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
                   load.addEventListener('load', loadedPhoto);
@@ -136,15 +153,14 @@
                   //Władowanie zdjęcia      
                   function loadedPhoto() {
                       ele.style.backgroundImage = 'url(img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)';
-                      console.log('loaded');
                       load.removeEventListener('load', lazyLoad.loadedPhoto);
                       lazyLoad.loading[1]++;
+                      load = '';
                       lazyLoad.loadingPhoto();
                   }
 
               } else if (ele.style.backgroundImage != '') {
                   //Jesłi zdjęcie ma już załadowany background
-                  // console.log('ma załadowane tło');
                   lazyLoad.loading[1]++;
                   lazyLoad.loadingPhoto();
               };
