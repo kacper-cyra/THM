@@ -95,9 +95,9 @@
 
   //Lazy Load
   let lazyLoad = {
-      loading: ['drezno', 1],
+      loading: ['drezno', 0],
       priority: false,
-      albums: ['drezno', 'horch', 'volk', 'berlin', 'praktyka', 'zwickau'],
+      albums: ['drezno', 'horch', 'volk', 'berlin', 'zajecia', 'zwickau'],
       drezno: (() => {
           return galeria.item.querySelectorAll('.drezno [photo]')
       })(),
@@ -110,8 +110,8 @@
       berlin: (() => {
           return galeria.item.querySelectorAll('.berlin [photo]')
       })(),
-      praktyka: (() => {
-          return galeria.item.querySelectorAll('.praktyka [photo]')
+      zajecia: (() => {
+          return galeria.item.querySelectorAll('.zajecia [photo]')
       })(),
       zwickau: (() => {
           return galeria.item.querySelectorAll('.zwickau [photo]')
@@ -122,17 +122,29 @@
           //-------------------------------
           //Ładowanie po koleji
           //Sprawdza, czy element istnieje
-          if (lazyLoad[lazyLoad.loading[0]][0]) {
-              let ele = lazyLoad[lazyLoad.loading[0]][0];
+          if (lazyLoad[lazyLoad.loading[0]][lazyLoad.loading[1]]) {
+              let ele = lazyLoad[lazyLoad.loading[0]][lazyLoad.loading[1]];
               //Sprawdza, czy zdjęcie nie jest załadowane
-              if (!ele.style.backgroundImage) {
-                  console.log('loading');
-                  console.log('url(img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)')
-                  ele.style.backgroundImage = 'url(img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)';
+              //  console.log(ele.style.backgroundImage);
+              if (ele.style.backgroundImage === '') {
                   console.log(ele);
-                  ele.addEventListener('load', lazyLoad.loadedPhoto);
-              } else {
+                  let load = document.createElement('img');
+                  let src = 'img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
+                  load.addEventListener('load', loadedPhoto);
+                  load.setAttribute('src', src);
+
+                  //Władowanie zdjęcia      
+                  function loadedPhoto() {
+                      ele.style.backgroundImage = 'url(img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)';
+                      console.log('loaded');
+                      load.removeEventListener('load', lazyLoad.loadedPhoto);
+                      lazyLoad.loading[1]++;
+                      lazyLoad.loadingPhoto();
+                  }
+
+              } else if (ele.style.backgroundImage != '') {
                   //Jesłi zdjęcie ma już załadowany background
+                  // console.log('ma załadowane tło');
                   lazyLoad.loading[1]++;
                   lazyLoad.loadingPhoto();
               };
@@ -140,20 +152,11 @@
               //Jeśli komórki nie ma
               //Przejście do kolejnej kategorji
               let phrase = lazyLoad.loading[0];
-              let ind = albums.indexOf(phrase);
-              lazyLoad.loading = [lazyLoad.albums[(ind + 1)], 1];
-              let {
-                  aaa,
-                  ...rest
-              } = lazyLoad.albums;
-          }
+              let ind = lazyLoad.albums.indexOf(phrase);
+              lazyLoad.loading = [lazyLoad.albums[(ind + 1)], 0];
+              if (lazyLoad.loading[0]) {
+                  lazyLoad.loadingPhoto();
+              }
+          };
       },
-      loadedPhoto: () => {
-          console.log('loaded');
-          lazyLoad[lazyLoad.loading[0]][0].removeEventListener('load', lazyLoad.loadedPhoto);
-          lazyLoad.loading[1]++;
-          lazyLoad.loadingPhoto();
-
-      }
   }
-  //document.addEventListener('load', lazyLoad.loadingPhoto);

@@ -604,7 +604,7 @@ footer {
     background-size: cover;
     background-position: 0 30%; }
   #galeria .volk {
-    background-image: url(../img/volt/volt1.jpg);
+    background-image: url(../img/volk/volk1.jpg);
     background-repeat: no-repeat;
     background-size: 180%;
     background-position: 70% 100%; }
@@ -613,7 +613,7 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 30%; }
-  #galeria .praktyka {
+  #galeria .zajecia {
     background-image: url(../img/zajecia/zajecia1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
