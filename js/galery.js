@@ -40,21 +40,29 @@
           history.replaceState({
               nav: false,
               name: 'galeria'
-          }, 'page 1', 'galeria');
+          }, '', 'galeria');
           history.pushState({
               page: 2,
               nav: false,
               page: 'galeria',
-          }, '', 'galeria/' + ele.getAttribute('text'));
+          }, '', ele.getAttribute('text'));
           //Ujawnienie menu po zakończeniu animacji
-          galeria.bg.addEventListener('transitionend', function end() {
+          galeria.bg.addEventListener('transitionend', end);
+
+          function end() {
               galeria.bg.querySelector('.side-bar').classList.add('show');
               galeria.bg.addEventListener('transitionend', end);
-          });
+              galeria.bg.style.transition = '';
+          }
       },
       zoomOut: () => {
+          galeria.plate.style.backgroundImage = galeria.bg.style.backgroundImage;
+          galeria.plate.style.backgroundPosition = '50% 50%';
           galeria.bg.querySelector('.side-bar').classList.remove('show');
+          galeria.bg.querySelector('.side-bar').style.display = 'none';
+          galeria.bg.querySelector('.next').style.opacity = '0';
           //UStawienie docelowe diva
+          galeria.bg.style.transition = 'all 1s ease-in-out';
           galeria.bg.style.top = (galeria.plate.offsetTop - galeria.displayCon.offsetTop) + 'px';
           galeria.bg.style.width = galeria.plate.offsetWidth + 'px';
           galeria.bg.style.left = (galeria.plate.offsetLeft - 8.5) + 'px';
@@ -102,12 +110,19 @@
   function changePhoto(ele) {
       let style = ele.currentStyle || window.getComputedStyle(ele, false);
       let url = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-      console.log(url);
+      //    console.log(url);
       let $next = galeria.bg.querySelector('.next');
       $next.style.backgroundImage = 'url(' + url + ')';
       ele.getAttribute('vertical') ? $next.style.backgroundSize = 'contain' : $next.style.backgroundSize = 'cover';
-      //$next.style.backgroundSize = 'contain';
       $next.style.opacity = '1';
+      $next.addEventListener('transitionend', end);
+
+      function end() {
+          galeria.bg.style.backgroundImage = 'url(' + url + ')';
+          $next.style.backgroundImage = '';
+          $next.style.opacity = '0';
+          $next.removeEventListener('transitionend', end);
+      }
   }
 
   //----------------------
@@ -146,13 +161,15 @@
               //Sprawdza, czy zdjęcie nie jest załadowane
               if (ele.style.backgroundImage === '') {
                   let load = document.createElement('img');
-                  let src = 'img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
+                  //Dopasować url do potrzeb serwera, uważać na zmianęurl po wejściu do galerii
+                  let src = window.location.origin + '/img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
+                  //console.log(src);
                   load.addEventListener('load', loadedPhoto);
                   load.setAttribute('src', src);
 
                   //Władowanie zdjęcia      
                   function loadedPhoto() {
-                      ele.style.backgroundImage = 'url(img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)';
+                      ele.style.backgroundImage = 'url(' + src + ')';
                       load.removeEventListener('load', lazyLoad.loadedPhoto);
                       lazyLoad.loading[1]++;
                       load = '';

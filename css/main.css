@@ -573,6 +573,17 @@ footer {
   #galeria .display-container {
     position: absolute;
     z-index: 10; }
+    #galeria .display-container .info {
+      position: absolute;
+      z-index: 2;
+      font-size: 20px;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+      top: 25px; }
+      #galeria .display-container .info span {
+        background-color: #FFFFFF70;
+        padding: 2.5px 5px; }
     #galeria .display-container .display {
       height: inherit;
       position: relative;
@@ -583,7 +594,8 @@ footer {
         height: inherit;
         background-size: cover;
         background-color: white;
-        background-repeat: no-repeat; }
+        background-repeat: no-repeat;
+        background-position: 50% 50%; }
         #galeria .display-container .display .bg .next {
           width: 100%;
           height: 100%;
@@ -591,9 +603,10 @@ footer {
           background-size: contain;
           background-repeat: no-repeat;
           position: absolute;
-          -webkit-transition: all 0.5s ease-in-out;
-          -o-transition: all 0.5s ease-in-out;
-          transition: all 0.5s ease-in-out; }
+          -webkit-transition: opacity 0.5s ease-in-out;
+          -o-transition: opacity 0.5s ease-in-out;
+          transition: opacity 0.5s ease-in-out;
+          background-position: 50% 50%; }
         #galeria .display-container .display .bg .side-bar {
           -webkit-clip-path: polygon(100% 100%, 100% 100%, 100% 0%, 100% 0%);
           clip-path: polygon(100% 100%, 100% 100%, 100% 0%, 100% 0%);
@@ -608,19 +621,12 @@ footer {
           transition: clip-path .4s ease-in-out, transform .4s ease-in-out;
           transition: clip-path .4s ease-in-out, transform .4s ease-in-out, -webkit-clip-path .4s ease-in-out, -webkit-transform .4s ease-in-out;
           z-index: 3;
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-          -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-          justify-content: space-between;
           overflow-y: scroll;
           -webkit-transform: translateX(250px);
           -ms-transform: translateX(250px);
           transform: translateX(250px);
-          background-color: #fefefeaa; }
+          background-color: #fefefeaa;
+          opacity: 0; }
           #galeria .display-container .display .bg .side-bar:hover {
             -webkit-transform: translateX(20px);
             -ms-transform: translateX(20px);
@@ -639,12 +645,13 @@ footer {
               margin: 2.5px 0 0 0; }
         #galeria .display-container .display .bg .show {
           -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
-          clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%); }
+          clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+          opacity: 1; }
   #galeria .drezno {
     background-image: url(../img/drezno/drezno1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 80% 0; }
+    background-position: 50% 50%; }
   #galeria .horch {
     background-image: url(../img/horch/horch1.jpg);
     background-repeat: no-repeat;

@@ -63,6 +63,21 @@
         position: absolute;
         z-index: 10;
 
+        .info {
+            position: absolute;
+            z-index: 2;
+            font-size: 20px;
+            font-weight: 600;
+            width: 100%;
+            text-align: center;
+            top: 25px;
+
+            span {
+                background-color: #FFFFFF70;
+                padding: 2.5px 5px;
+            }
+        }
+
         .display {
             height: inherit;
             position: relative;
@@ -75,6 +90,7 @@
                 background-size: cover;
                 background-color: white;
                 background-repeat: no-repeat;
+                background-position: 50% 50%;
 
                 .next {
                     width: 100%;
@@ -83,7 +99,8 @@
                     background-size: contain;
                     background-repeat: no-repeat;
                     position: absolute;
-                    transition: all 0.5s ease-in-out;
+                    transition: opacity 0.5s ease-in-out;
+                    background-position: 50% 50%;
                 }
 
                 .side-bar {
@@ -95,12 +112,10 @@
                     height: inherit;
                     transition: clip-path .4s ease-in-out, transform .4s ease-in-out;
                     z-index: 3;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
                     overflow-y: scroll;
                     transform: translateX(250px);
                     background-color: #fefefeaa;
+                    opacity: 0;
 
                     &:hover {
                         transform: translateX(20px);
@@ -126,7 +141,9 @@
                 }
 
                 .show {
-                    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)
+                    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+                    opacity: 1;
+
                 }
             }
         }
@@ -136,7 +153,7 @@
         background-image: url(../img/drezno/drezno1.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 80% 0;
+        background-position: 50% 50%;
     }
 
     .horch {
@@ -173,7 +190,6 @@
         background-size: cover;
         background-position: 0 0;
     }
-
 }
 
 @media only screen and (max-width: 600px) {
