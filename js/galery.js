@@ -162,7 +162,9 @@
               if (ele.style.backgroundImage === '') {
                   let load = document.createElement('img');
                   //Dopasować url do potrzeb serwera, uważać na zmianęurl po wejściu do galerii
-                  let src = window.location.origin + '/img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
+                  let origin = window.location.origin;
+                  origin.replace('THM', '');
+                  let src = origin + '/THM/img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
                   //console.log(src);
                   load.addEventListener('load', loadedPhoto);
                   load.setAttribute('src', src);
