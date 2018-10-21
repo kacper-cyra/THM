@@ -2,76 +2,88 @@
   let galeria = {
       item: document.getElementById('galeria'),
       displayCon: document.querySelector('#galeria .display-container'),
-      category: document.querySelector('.category'),
+      bg: 0,
+      plate: 0,
       display: document.querySelector('#galeria .display'),
-      active: {},
       scroll: 0,
       zoomIn: (ele) => {
           //Kopiowanie elementu do display
-          /* let clone = ele.cloneNode(true);
-           clone.classList.add('bg');
-           clone.style.padding = '0px';
-           galeria.scroll = window.pageYOffset;
-           galeria.displayCon.style.left = ele.offsetLeft + 'px';
-           galeria.displayCon.style.top = ele.offsetTop + 'px';
-           galeria.displayCon.style.width = ele.offsetWidth + 'px';
-           galeria.displayCon.style.height = ele.offsetHeight + 'px';
-
-           galeria.display.append(clone);
-           galeria.displayCon.classList.add('zoom-in');
-           galeria.displayCon.style.left = '0';
-           galeria.displayCon.style.top = window.pageYOffset + 'px';
-           galeria.displayCon.style.width = '';
-           galeria.displayCon.style.height = '';
-           setTimeout(() => {
-               galeria.displayCon.style.top = '0px';
-               galeria.category.style.height = '0px'
-           }, 900);
-           history.replaceState({
-               nav: false,
-               name: 'galeria'
-           }, 'page 1', 'galeria');
-           history.pushState({
-               page: 2,
-               nav: false,
-               page: 'galeria',
-           }, '', 'galeria/' + ele.getAttribute('class'));*/
-          //Powiększanie zdjęcia
-          ele.classList.remove('plate');
-          ele.classList.add('aaa');
-
-          ele.style.top = window.pageYOffset + 'px';
+          galeria.bg = ele.cloneNode(true);
+          galeria.plate = ele;
+          galeria.bg.classList.add('bg');
+          galeria.bg.classList.remove('plate');
+          //Ustawienia display-containera
+          galeria.scroll = window.pageYOffset;
+          galeria.displayCon.style.left = ele.offsetLeft + 'px';
+          galeria.displayCon.style.top = ele.offsetTop + 'px';
+          galeria.displayCon.classList.add('zoom-in');
+          galeria.displayCon.style.left = '0';
+          galeria.displayCon.style.top = window.pageYOffset + 'px';
+          //Przygotowanie diva
+          galeria.display.append(galeria.bg);
+          galeria.bg.style.top = (ele.offsetTop - galeria.displayCon.offsetTop) + 'px';
+          galeria.bg.style.width = ele.offsetWidth + 'px';
+          galeria.bg.style.left = ele.offsetLeft + 'px';
+          galeria.bg.style.transition = 'all 1s ease-in-out';
+          setTimeout(() => {
+              galeria.bg.style.height = '';
+              galeria.bg.style.width = '';
+              galeria.bg.style.left = '0px';
+              galeria.bg.style.top = '0px';
+          }, 1)
+          //Wyłączenie scrolla
+          bodyScrollLock.disableBodyScroll(galeria.displayCon);
+          setTimeout(() => {
+              body.style.width = '100vw';
+          }, 900)
+          //Operacje na historii
+          history.replaceState({
+              nav: false,
+              name: 'galeria'
+          }, 'page 1', 'galeria');
+          history.pushState({
+              page: 2,
+              nav: false,
+              page: 'galeria',
+          }, '', 'galeria/' + ele.getAttribute('text'));
+          //Ujawnienie menu po zakończeniu animacji
+          galeria.bg.addEventListener('transitionend', function end() {
+              galeria.bg.querySelector('.side-bar').classList.add('show');
+              galeria.bg.addEventListener('transitionend', end);
+          });
       },
       zoomOut: () => {
-          // console.log(galeria.scroll);
-          galeria.category.style.height = '';
-          galeria.displayCon.style.left = galeria.active.offsetLeft + 'px';
-          galeria.displayCon.style.top = galeria.active.offsetTop + 'px';
-          galeria.displayCon.style.width = galeria.active.offsetWidth + 'px';
-          galeria.displayCon.style.height = galeria.active.offsetHeight + 'px';
+          galeria.bg.querySelector('.side-bar').classList.remove('show');
+          //UStawienie docelowe diva
+          galeria.bg.style.top = (galeria.plate.offsetTop - galeria.displayCon.offsetTop) + 'px';
+          galeria.bg.style.width = galeria.plate.offsetWidth + 'px';
+          galeria.bg.style.left = (galeria.plate.offsetLeft - 8.5) + 'px';
+          galeria.bg.style.height = galeria.plate.offsetHeight + 'px';
+          //odblokowanie scrolla
+          bodyScrollLock.enableBodyScroll(galeria.displayCon);
+          body.style.width = '';
           setTimeout(() => {
-              //animacja scrolla do pozycji okna w której było
-              //problem z brakiem synchronizacji z chowającym się oknem
-              //window.scrollTo(0, (galeria.active.offsetTop - ((window.innerHeight / 2) - (galeria.active.offsetHeight / 2))));
-          }, 1);
-          setTimeout(() => {
+              //Usuwanie zawartości
               while (galeria.display.firstChild && galeria.display.removeChild(galeria.display.firstChild));
               galeria.displayCon.classList.remove('zoom-in');
               galeria.displayCon.style.width = '';
               galeria.displayCon.style.height = '';
-          }, 820);
-
-
+          }, 1020);
       }
   }
   let cache = {};
 
   let plates = document.querySelectorAll('#galeria .plate');
-  plates.forEach((item) => {
-      item.getAttribute('size') === 'x2' ? item.style.height = (item.offsetWidth / 2) + 'px' : 0;
-      item.getAttribute('size') === 'y2' ? item.style.height = (item.offsetWidth * 2) + 'px' : 0;
-      item.getAttribute('size') ? 0 : item.style.height = item.offsetWidth + 'px';
-  });
+
+  function setGallery() {
+      plates.forEach((item) => {
+          item.getAttribute('size') === 'x2' ? item.style.height = (item.offsetWidth / 2) + 'px' : 0;
+          item.getAttribute('size') === 'y2' ? item.style.height = (item.offsetWidth * 2) + 'px' : 0;
+          item.getAttribute('size') ? 0 : item.style.height = item.offsetWidth + 'px';
+      });
+  }
+  setGallery();
+  window.addEventListener('resize', setGallery);
 
   galeria.item.addEventListener('click', (e) => {
       let ele = e.target;
@@ -81,104 +93,67 @@
       }
   })
 
-
-
-
-
-  /*gallery.addEventListener('click', (e) => {
-      e.preventDefault();
-      let ele = e.target;
-
-      if (ele.classList.contains('zdj')) {
-          //--------------------------------
-          //PRZYGOTOWANIE SRC
-          //--------------------------------
-          let atr = ele.getAttribute('src');
-          let target = atr.slice(0, 8);
-          atr = target.replace('src/img/', '');
-          atr = target + modal.size + '/' + atr;
-          console.log(atr);
-          gallery.querySelector('.active.zdj').classList.remove('active');
-          ele.classList.add('active');
-
-
-          //Jeśli zdjęcie jest już w cache
-          if (cache.hasOwnProperty(target)) {
-              // I się nie wczytuje
-              if (cache[target].isLoading === false) {
-                  //Wyświetl zdjęcie w displayu; załadowane z cache
-                  modal.display.append(cache[target]);
-                  modal.current = target;
-              }
-          } else {
-              modal.current = target;
-              cache[target] = {
-                  img: 'img',
-                  isLoading: 'true'
-              };
-              modal.fetch(target);
-          }
+  //Lazy Load
+  let lazyLoad = {
+      loading: ['drezno', 1],
+      priority: false,
+      albums: ['drezno', 'horch', 'volk', 'berlin', 'praktyka', 'zwickau'],
+      drezno: (() => {
+          return galeria.item.querySelectorAll('.drezno [photo]')
+      })(),
+      horch: (() => {
+          return galeria.item.querySelectorAll('.horch [photo]')
+      })(),
+      volk: (() => {
+          return galeria.item.querySelectorAll('.volk [photo]')
+      })(),
+      berlin: (() => {
+          return galeria.item.querySelectorAll('.berlin [photo]')
+      })(),
+      praktyka: (() => {
+          return galeria.item.querySelectorAll('.praktyka [photo]')
+      })(),
+      zwickau: (() => {
+          return galeria.item.querySelectorAll('.zwickau [photo]')
+      })(),
+      loadingPhoto: () => {
           //------------------------------
-      } else return 0;
-  });
-  */
-  //----------------------------
-  //------Zamykanie modalu------
-  //----------------------------  
-  /*  document.getElementById('galleryModal').addEventListener('click', (e) => {
-        let ele = e.target;
-        if (ele.getAttribute('id') == "galleryModal" || ele.classList.contain('close')) {
-            modal.close();
-        }
-    });
-    //----------------------------
-    //------Wielkość Ekranu-------
-    //----------------------------    
-    window.addEventListener('resize', () => {
-        window.innerWidth < 1000 ? modal.size = 'medium' : modal.size = 'large';
-    })
-  */
+          //Dodać sprawdzenie priorytetu
+          //-------------------------------
+          //Ładowanie po koleji
+          //Sprawdza, czy element istnieje
+          if (lazyLoad[lazyLoad.loading[0]][0]) {
+              let ele = lazyLoad[lazyLoad.loading[0]][0];
+              //Sprawdza, czy zdjęcie nie jest załadowane
+              if (!ele.style.backgroundImage) {
+                  console.log('loading');
+                  console.log('url(../img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)')
+                  ele.style.backgroundImage = 'url(../img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg)';
+                  console.log(ele);
+                  ele.addEventListener('load', lazyLoad.loadedPhoto);
+              } else {
+                  //Jesłi zdjęcie ma już załadowany background
+                  lazyLoad.loading[1]++;
+                  lazyLoad.loadingPhoto();
+              };
+          } else {
+              //Jeśli komórki nie ma
+              //Przejście do kolejnej kategorji
+              let phrase = lazyLoad.loading[0];
+              let ind = albums.indexOf(phrase);
+              lazyLoad.loading = [lazyLoad.albums[(ind + 1)], 1];
+              let {
+                  aaa,
+                  ...rest
+              } = lazyLoad.albums;
+          }
+      },
+      loadedPhoto: () => {
+          console.log('loaded');
+          lazyLoad[lazyLoad.loading[0]][0].removeEventListener('load', lazyLoad.loadedPhoto);
+          lazyLoad.loading[1]++;
+          lazyLoad.loadingPhoto();
 
-  /*let modal = {
-       item: document.getElementById('galleryModal'),
-       display: document.getElementById('display'),
-       container: document.getElementById('container'),
-       current: '',
-       size: 'large',
-       open: () => {
-           modal.item.classList.add('open')
-       },
-       close: () => {
-           modal.item.classList.remove('open')
-       },
-       remove: () => {
-           let children = modal.container.children;
-           children.forEach((item) => {
-               item.remove()
-           });
-       },
-       fetch: (target) => {
-           let url = target
-           let options = {
-               method: 'GET',
-               mode: 'cors',
-               cache: 'default'
-           }
-           fetch(url, options)
-               .then((res) => res.blob())
-               .then((img) => {
-                   let ele = document.createElement('div');
-                   ele.append(img);
-
-                   modal.current = target;
-                   cache[target] = {
-                       img: ele, // node element
-                       isLoading: false
-                   };
-
-               })
-               .catch((error) => {})
-
-           //   modal.open();  Przenieść do promise w fetchu	
-       }
-   }*/
+      }
+  }
+  //document.addEventListener('load', lazyLoad.loadingPhoto);

@@ -19,4 +19,5 @@ window.addEventListener('load', () => {
     document.getElementById('galeria').setAttribute('hidden', '');
     loading.object.classList.remove('loading-animation');
     document.querySelector('body').classList.remove('no-flow');
+    lazyLoad.loadingPhoto();
 })

@@ -134,8 +134,6 @@
         font-size: 1.45rem;
         padding: 0;
         margin: 0;
-
-
     }
 
     .photos {
@@ -149,7 +147,7 @@
             z-index: 5;
 
             &:before {
-                background: url(../img/drezno.jpg) 0/contain no-repeat;
+                background: url(../img/drezno/drezno1.jpg) 0/contain no-repeat;
                 top: 0;
                 left: 0;
             }
@@ -281,7 +279,7 @@
         z-index: 5;
 
         &:before {
-            background: url(../img/pneumatyka.jpg) 0/contain no-repeat;
+            background: url(../img/zajecia/zajecia2.jpg) 0/contain no-repeat;
             top: 0;
             left: 0;
         }
@@ -382,7 +380,7 @@
                 z-index: 1;
                 width: 60%;
                 top: -0.5rem;
-                background: url(../img/zwickau_group.jpg) 0/contain no-repeat;
+                background: url(../img/zwickau/zwickau3.jpg) 0/contain no-repeat;
             }
 
             &:nth-child(2) {
@@ -390,7 +388,7 @@
                 z-index: 2;
                 left: 55%;
                 top: -1.5rem;
-                background: url(../img/zwickau_las.jpg) 0/contain no-repeat;
+                background: url(../img/zwickau/zwickau4.jpg) 0/contain no-repeat;
             }
 
             &:nth-child(3) {
@@ -398,7 +396,7 @@
                 width: 50%;
                 left: 25%;
                 top: 13.5rem;
-                background: url(../img/zwickau_rynek.jpg) 0/contain no-repeat;
+                background: url(../img/zwickau/zwickau5.jpg) 0/contain no-repeat;
             }
 
             &:hover {
@@ -578,7 +576,7 @@
                     z-index: 1;
                     width: 60%;
                     top: -2rem;
-                    background: url(../img/zwickau_group.jpg) 0/contain no-repeat;
+                    background: url(../img/zwickau/zwickau3.jpg) 0/contain no-repeat;
                 }
 
                 &:nth-child(2) {
@@ -586,7 +584,7 @@
                     z-index: 2;
                     left: 55%;
                     top: 0;
-                    background: url(../img/zwickau_las.jpg) 0/contain no-repeat;
+                    background: url(../img/zwickau/zwickau4.jpg) 0/contain no-repeat;
                 }
 
                 &:nth-child(3) {
@@ -594,7 +592,7 @@
                     width: 50%;
                     left: 25%;
                     top: 6rem;
-                    background: url(../img/zwickau_rynek.jpg) 0/contain no-repeat;
+                    background: url(../img/zwickau/zwickau5.jpg) 0/contain no-repeat;
                 }
 
                 &:hover {

@@ -3,29 +3,21 @@ let loading = {
     object: document.querySelector('.loading'),
     slowest: document.querySelector('.loading div:nth-child(7)'),
     status: 'left',
-    eventListener: () => {
-        bodyScrollLock.enableBodyScroll(loading.object);
-        loading.slowest.removeEventListener('transitionend', loading.eventListener);
-    },
     start: () => {
         loading.object.classList.add('loading-animation');
-        bodyScrollLock.disableBodyScroll(loading.object);
     },
     finish: () => {
         loading.object.classList.add('loading-finish');
-        loading.slowest.addEventListener('transitionend', loading.eventListener);
     },
     reverseFinish: () => {
         loading.object.classList.remove('loading-finish');
-        bodyScrollLock.disableBodyScroll(loading.object);
     },
     back: () => {
         loading.object.classList.remove('loading-animation');
-        loading.slowest.addEventListener('transitionend', loading.eventListener);
     },
     setHeight: () => {
+        console.log(navigation.pages[navigation.active].scroll + 'px');
         loading.object.style.top = navigation.pages[navigation.active].scroll + 'px';
-        //    console.log(navigation.pages[navigation.active].scroll + 'px');
     },
     setLeft: () => {
         let items = document.querySelectorAll('.loading .delay');
@@ -60,7 +52,6 @@ let loading = {
 document.addEventListener('scroll', (e) => {
     navigation.pages[navigation.active].scroll = window.pageYOffset;
 });
-let l = document.querySelector('.loading div');
 let navigation = {
     active: 'index',
     pages: {
@@ -86,35 +77,34 @@ let navigation = {
     },
     //Animacja z lewej do prawej
     animateTo: (target) => {
-        position = window.pageYOffset;
         loading.status == 'left' ? 0 : loading.setLeft();
         loading.setHeight();
         loading.object.style.zIndex = '30';
         //Dodaje blokade scrolla
         loading.start();
+        bodyScrollLock.disableBodyScroll(loading.object);
         loading.slowest.addEventListener('transitionend', load);
 
         function load() {
-           // document.removeEventListener("scroll", blocked);
-           //Usuwamsvrollblocka
-           bodyScrollLock.enableBodyScroll(loading.object);
+            //Usuwam scrollblocka
+            bodyScrollLock.enableBodyScroll(loading.object);
             loading.slowest.removeEventListener('transitionend', load);
             navigation.pages[navigation.active].item.setAttribute('hidden', '');
+            document.getElementById(target.name).removeAttribute('hidden');
             navigation.active = target.name;
             window.scrollTo(0, 0);
             loading.object.style.top = '0px';
-            document.getElementById(target.name).removeAttribute('hidden');
+            bodyScrollLock.disableBodyScroll(loading.object);
             setTimeout(() => {
                 //Dodaje blokowanie scrolla
-               // document.addEventListener("scroll", blocked);
-                bodyScrollLock.disableBodyScroll(loading.object);
                 loading.finish();
                 loading.slowest.addEventListener('transitionend', unload);
             }, 550);
         };
 
         function unload() {
-            document.removeEventListener("scroll", blocked);
+            //Usuwam scrollblocka
+            bodyScrollLock.enableBodyScroll(loading.object);
             loading.object.style.zIndex = '-1';
             loading.slowest.removeEventListener('transitionend', unload);
         };
@@ -122,32 +112,31 @@ let navigation = {
     },
     //Animacja z prawej do lewej
     animateBackwards: (target) => {
-        position = window.pageYOffset;
+        console.log(target);
         loading.status == 'right' ? 0 : loading.setRight();
-        loading.object.style.zIndex = '30';
         loading.setHeight();
+        loading.object.style.zIndex = '30';
         loading.reverseFinish();
+        bodyScrollLock.disableBodyScroll(loading.object);
         loading.slowest.addEventListener('transitionend', load);
 
         function load() {
-           // document.removeEventListener("scroll", blocked);
-            bodyScrollLock.disableBodyScroll(loading.object);
-            document.getElementById(target.name).removeAttribute('hidden');
-            navigation.pages[navigation.active].item.setAttribute('hidden', '');
+            bodyScrollLock.enableBodyScroll(loading.object);
             loading.slowest.removeEventListener('transitionend', load);
+            navigation.pages[navigation.active].item.setAttribute('hidden', '');
+            document.getElementById(target.name).removeAttribute('hidden');
             navigation.active = target.name;
             loading.setHeight();
             window.scrollTo(0, navigation.pages[navigation.active].scroll);
+            bodyScrollLock.disableBodyScroll(loading.object);
             setTimeout(() => {
-                bodyScrollLock.disableBodyScroll(loading.object);
-               // document.addEventListener("scroll", blocked);
                 loading.back();
                 loading.slowest.addEventListener('transitionend', unload);
             }, 550);
         };
 
         function unload() {
-          //  document.removeEventListener("scroll", blocked);
+            bodyScrollLock.enableBodyScroll(loading.object);
             loading.object.style.zIndex = '-1';
             loading.slowest.removeEventListener('transitionend', unload);
         };
@@ -165,8 +154,10 @@ window.onpopstate = (e) => {
     } else if (e.state.page < navigation.pages[navigation.active].page) {
         // console.log(navigation.pages[navigation.active]);
         navigation.animateBackwards(e.state);
+        console.log('fireing')
     } else {
         navigation.animateTo(e.state);
+        console.log('fireing')
     }
 };
 

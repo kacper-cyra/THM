@@ -5,8 +5,6 @@ let $burger = document.querySelector(".burger");
 let $burgerWrapp = document.querySelector(".burger-wrapper");
 let position = 0;
 
-document.querySelector(".burger").addEventListener("click", showMenu)
-
 function showMenu() {
     position = window.pageYOffset;
     if (menuShowed === false) {
@@ -30,32 +28,3 @@ function showMenu() {
         $menu.classList.remove("m-showed");
     }
 }
-
-function blocked(e) {
-    e.preventDefault();
-    return false;
-    //window.scrollTo(0, position);
-}
-
-//let words = [];
-//let $menuBtns = document.querySelectorAll(".bt-back");
-//let wordsCount = () => {
-//    $menuBtns.forEach((item, ind) => {
-//        words[ind] = item.textContent;
-//    })
-//}
-//wordsCount();
-//window.addEventListener("resize", menuSetup);
-//
-//function menuSetup() {
-//    let style = window.getComputedStyle(document.querySelector("body"), null).getPropertyValue('font-size');
-//    let fontSize = parseFloat(style);
-//    $menuBtns.forEach((item, ind) => {
-//        let itemWidth = words[ind].length * fontSize * 3;
-//        itemWidth = itemWidth - itemWidth * 0.45;
-//        item.style.maxWidth = itemWidth + "px";
-//    })
-//
-//}
-//
-//menuSetup();
