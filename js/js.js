@@ -21,3 +21,13 @@ window.addEventListener('load', () => {
     document.querySelector('body').classList.remove('no-flow');
     lazyLoad.loadingPhoto();
 })
+
+function getNodeIndex(node) {
+    var index = 0;
+    while ((node = node.previousSibling)) {
+        if (node.nodeType != 3 || !/^\s*$/.test(node.data)) {
+            index++;
+        }
+    }
+    return index;
+}

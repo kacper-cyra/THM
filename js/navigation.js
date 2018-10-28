@@ -124,12 +124,22 @@ let navigation = {
     },
     //Animacja z prawej do lewej
     animateBackwards: (target) => {
-        loading.status == 'right' ? 0 : loading.setRight();
+        bodyScrollLock.disableBodyScroll(loading.object);
+        let offset = window.pageYOffset;
         loading.setHeight();
+        document.addEventListener('scroll', prevent);
+        loading.status == 'right' ? 0 : loading.setRight();
         loading.object.style.zIndex = '30';
         loading.reverseFinish();
-        bodyScrollLock.disableBodyScroll(loading.object);
         loading.slowest.addEventListener('transitionend', load);
+        setTimeout(() => {
+            document.removeEventListener('scroll', prevent);
+        }, 100)
+
+        function prevent(e) {
+            e.preventDefault();
+            window.scrollTo(0, offset);
+        };
 
         function load() {
             bodyScrollLock.enableBodyScroll(loading.object);
@@ -158,17 +168,17 @@ let navigation = {
 window.onpopstate = (e) => {
     //  console.log(e.state);
     //Jeśli przekierowanie bez animacji przejścia
+    e.preventDefault();
     if (e.state.nav === false) {
         if (e.state.name === 'galeria') {
             galeria.zoomOut();
         } else return 0;
     } else if (e.state.page < navigation.pages[navigation.active].page) {
-        // console.log(navigation.pages[navigation.active]);
+        e.preventDefault();
+        console.log(navigation.pages[navigation.active]);
         navigation.animateBackwards(e.state);
-        console.log('fireing')
     } else {
         navigation.animateTo(e.state);
-        console.log('fireing')
     }
 };
 

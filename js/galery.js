@@ -64,12 +64,12 @@
           //UStawienie docelowe diva
           galeria.bg.style.transition = 'all 1s ease-in-out';
           galeria.bg.style.top = (galeria.plate.offsetTop - galeria.displayCon.offsetTop) + 'px';
-          galeria.bg.style.width = galeria.plate.offsetWidth + 'px';
-          galeria.bg.style.left = (galeria.plate.offsetLeft - 8.5) + 'px';
           galeria.bg.style.height = galeria.plate.offsetHeight + 'px';
           //odblokowanie scrolla
           bodyScrollLock.enableBodyScroll(galeria.displayCon);
           body.style.width = '';
+          galeria.bg.style.width = galeria.plate.offsetWidth + 'px';
+          galeria.bg.style.left = galeria.plate.offsetLeft + 'px';
           setTimeout(() => {
               //Usuwanie zawartości
               while (galeria.display.firstChild && galeria.display.removeChild(galeria.display.firstChild));
@@ -161,10 +161,7 @@
               //Sprawdza, czy zdjęcie nie jest załadowane
               if (ele.style.backgroundImage === '') {
                   let load = document.createElement('img');
-                  //Dopasować url do potrzeb serwera, uważać na zmianęurl po wejściu do galerii
-                  let origin = window.location.origin;
-                  origin.replace('THM', '');
-                  let src = origin + '/THM/img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
+                  let src = '/img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
                   //console.log(src);
                   load.addEventListener('load', loadedPhoto);
                   load.setAttribute('src', src);

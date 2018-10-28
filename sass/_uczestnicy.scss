@@ -1,0 +1,124 @@
+#uczestnicy {
+    height: 100vh;
+
+
+
+
+
+    .przebieg {
+        position: relative;
+
+        .background-text {
+            position: absolute;
+
+            h3 {
+                font-size: 100px !important;
+            }
+        }
+
+        .week {
+            h4 {
+                display: none;
+                clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
+                transition: all 0.5s ease-in-out;
+
+                &.animate {
+                    display: inline;
+                }
+
+                &.show {
+                    display: inline;
+                    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+                }
+            }
+        }
+
+        .options {
+            position: absolute;
+            left: 80%;
+
+            div {
+                width: 25px;
+                height: 25px;
+                background-color: var(--color-third);
+                border-radius: 50%;
+                transition: all .3s ease-in-out;
+                margin: 2px 0;
+                cursor: pointer;
+
+                &.active {
+                    background-color: var(--color-fourth);
+                }
+            }
+        }
+
+        .pictures {
+            div {
+                display: none;
+                clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
+                transition: all 0.5s ease-in-out;
+                width: inherit;
+                height: 400px;
+                position: absolute;
+                top: 50px;
+                left: 0;
+
+                &.animate {
+                    display: block;
+                }
+
+                &.show {
+                    display: block;
+                    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+                }
+
+                &:first-child {
+                    background-image: url('../img/zajecia/zajecia2.jpg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                &:nth-child(2) {
+                    background-image: url('../img/zajecia/zajecia5.jpg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                &:nth-child(3) {
+                    background-image: url('../img/zajecia/zajecia1.jpg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                &:nth-child(4) {
+                    background-image: url('../img/zajecia/zajecia3.jpg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+
+        .text {
+            p {
+                display: none;
+                clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
+                transition: all 0.5s ease-in-out;
+                width: 600px;
+                font-size: 18px;
+                font-weight: 600;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &.animate {
+                    display: block;
+                }
+
+                &.show {
+                    display: block;
+                    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+                }
+            }
+        }
+    }
+}

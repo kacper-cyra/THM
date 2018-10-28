@@ -681,3 +681,93 @@ footer {
 @media only screen and (max-width: 600px) {
   .album {
     padding: 0; } }
+
+#uczestnicy {
+  height: 100vh; }
+  #uczestnicy .przebieg {
+    position: relative; }
+    #uczestnicy .przebieg .background-text {
+      position: absolute; }
+      #uczestnicy .przebieg .background-text h3 {
+        font-size: 100px !important; }
+    #uczestnicy .przebieg .week h4 {
+      display: none;
+      -webkit-clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
+      clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
+      -webkit-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+      #uczestnicy .przebieg .week h4.animate {
+        display: inline; }
+      #uczestnicy .przebieg .week h4.show {
+        display: inline;
+        -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%); }
+    #uczestnicy .przebieg .options {
+      position: absolute;
+      left: 80%; }
+      #uczestnicy .przebieg .options div {
+        width: 25px;
+        height: 25px;
+        background-color: var(--color-third);
+        border-radius: 50%;
+        -webkit-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        margin: 2px 0;
+        cursor: pointer; }
+        #uczestnicy .przebieg .options div.active {
+          background-color: var(--color-fourth); }
+    #uczestnicy .przebieg .pictures div {
+      display: none;
+      -webkit-clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
+      clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
+      -webkit-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      width: inherit;
+      height: 400px;
+      position: absolute;
+      top: 50px;
+      left: 0; }
+      #uczestnicy .przebieg .pictures div.animate {
+        display: block; }
+      #uczestnicy .przebieg .pictures div.show {
+        display: block;
+        -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%); }
+      #uczestnicy .przebieg .pictures div:first-child {
+        background-image: url("../img/zajecia/zajecia2.jpg");
+        background-repeat: no-repeat;
+        background-size: contain; }
+      #uczestnicy .przebieg .pictures div:nth-child(2) {
+        background-image: url("../img/zajecia/zajecia5.jpg");
+        background-repeat: no-repeat;
+        background-size: contain; }
+      #uczestnicy .przebieg .pictures div:nth-child(3) {
+        background-image: url("../img/zajecia/zajecia1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain; }
+      #uczestnicy .przebieg .pictures div:nth-child(4) {
+        background-image: url("../img/zajecia/zajecia3.jpg");
+        background-repeat: no-repeat;
+        background-size: contain; }
+    #uczestnicy .przebieg .text p {
+      display: none;
+      -webkit-clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
+      clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
+      -webkit-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      width: 600px;
+      font-size: 18px;
+      font-weight: 600;
+      position: absolute;
+      top: 0;
+      left: 0; }
+      #uczestnicy .przebieg .text p.animate {
+        display: block; }
+      #uczestnicy .przebieg .text p.show {
+        display: block;
+        -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%); }
