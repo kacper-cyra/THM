@@ -1,0 +1,79 @@
+{
+    "lang": [{
+            "selector": ".second .content",
+            "HTML": "<span class='title'><h2>About Zwickau</h2></span><p>Zwickau has around 90,000 residents. It is the fourth largest city in Saxony in the center of the southwestern part of country.</p><p> The territory of Zwickau was mentioned for the first time in 1118. Coal was mined in the area for almost 800 years.</p><p> In 1810, the famous 'Son of the City', the romantic composer Robert Schumann, was born here. In addition, on 21 April 2016, city was officially recognized as 'Reformation City of Europe'</p>"
+    },
+        {
+            "selector": ".third .text",
+            "text": "TOURS"
+    },
+        {
+            "selector": ".third .content p",
+            "text": "During our foreign practices we visited many monuments, museums and other fascinating attractions, which helped us spend ouer time in nice atmosphere and learn more about culture and customs in the region."
+    },
+        {
+            "selector": ".third .info",
+            "HTML": "<ul class='list-unstyled'><li><span>We visited:</span></li><li><span>Dresden</span></li><li><span>Horch Museum</span></li><li><span> Volkswagen factory</span></li><li><span>Berlin</span></li><li><span>Zwizkau</span></li><li><span>Brewery in Zwickau</span></li></ul>"
+    },
+        {
+            "selector": ".fourth .text",
+            "text": "CLASSES"
+    },
+        {
+            "selector": ".fourth .content p",
+            "text": "For 4 weeks under the supervision of their carers, we have been practicing at the FAW Ausbildungszentrum in Zwickau. We practiced skills in the field of mechatronics, computer science and electronics."
+    },
+        {
+            "selector": "[href='uczestnicy']",
+            "text": "More"
+    },
+        {
+            "selector": ".fifth .text",
+            "HTML": "GALLERY"
+    }, {
+            "selector": ".fifth .content p",
+            "text": "We have made some photos during our stay in Germany!"
+    },
+        {
+            "selector": ".fifth .content a",
+            "text": "Gallery"
+    },
+
+        {
+            "selector": "#uczestnicy .background-text h3",
+            "HTML": "P<br>R<br>A<br>C<br>T<br>I<br>C<br>E"
+    },
+        {
+            "selector": "#uczestnicy .week",
+            "HTML": "<h4 class='show'>First week</h4><h4>Second week</h4><h4>Third week</h4><h4>Fourth week</h4>"
+    },
+        {
+            "selector": "#uczestnicy .sec:nth-child(1) h2",
+            "text": "Workplace"
+    },
+        {
+            "selector": "#uczestnicy .sec:nth-child(1) span",
+            "text": "FAW gGmbH Zwickau Akademia Chemnitz"
+    },
+        {
+            "selector": "#uczestnicy .sec:nth-child(2) h2",
+            "text": "Lecturers"
+    },
+        {
+            "selector": "#uczestnicy .sec:nth-child(2) ul",
+            "HTML": "<li>Mr. Geisler - Pneumatics</li><li>Mr. Illing - SPS/Mechatronics</li><li>Mr. Schramm - CNC</li><li>Mr. Glaß - Website design</li><li>Mr. Bornschein - Electrotechnics</li>"
+    },
+        {
+            "selector": "#uczestnicy .sec:nth-child(3) h2",
+            "text": "Carers"
+    },
+        {
+            "selector": "#uczestnicy .sec:nth-child(3) div",
+            "HTML": "<span>Mrs. Aneta Sadrak</span><br><span>Mr. Piotr Paluch</span>"
+    },
+        {
+            "selector": "#uczestnicy .text",
+            "HTML": "<p class='show'>On the first day we had been shown around the workplace where we had ouer internships. Over the next week, computer scientists and electronics, under care of Mr. Schramm, learned how to program CNC machines. They worked with the MTS program. Mechatronics, on the other hand, started their practices from pneumatics classes with Mr. Geissler. It was a great opportunity to confront their experience. They built more or less advanced systems based on schemes prepared by Mr. Geissler and could modify them in any way they wanted. They liked the freedom of lessons.</p><p>The next week, IT specialists with electronics came to Mr. Bornshein, where they were taught the basics of soldering. In order to improve their skills, they assembled a stress sensor. This allowed them to learn skills which may be useful in the future. They could take Finished project with them. Mechatronics, without changing the teacher, began classes in electropneumatics.</p><p>In the third week, computer scientists and electronic technicians got under the care of Mr. Geissler for pneumatics. They could experience what mechatronics had been doing in recent weeks. They enjoyed their classes. It was a perfect escape from work with computers. Mechatronics, however, came to Mr. Schramm. They improved theirs skills in programming CNC machines, as IT did in the first week. Classes also allowed to see the program in practice. On Wednesday, our classes were interrupted by a visit to the Volkswagen factory... For the rest of the week, we continued our classes.</p><p>The last week passed to IT specialists on the work on the website and multimedia presentation. One group was involved in writing texts, selecting and processing graphics. The second group took care of writing a website. Mechatronics and electronics, on the other hand, spent this time in SPS classes conducted by Mr. Illing. For the last two days, they were working with the SIMATIC program for programming SPS controllers. They wrote a program to operate a bottle filling device, a program closing and opening barriers in parking lots, and a program for controlling lights at an intersection. The practice ended on June 8.</p>"
+    }
+    ]
+}

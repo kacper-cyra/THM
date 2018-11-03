@@ -1,0 +1,92 @@
+{
+    "lang": [{
+            "selector": ".second .content",
+            "HTML": "<span class='title'><h2>O Zwickau</h2></span><p>Zwickau ma około 90 tysiecy mieszkańcow. Jest czwartym co do wielkości miastem w Saksonii w centrum południowo zachodniej części kraju.</p><p>O terytorium Zwickau wspomniano po raz pierwszy w 1118r. Węgiel kamienny był wydobywany tu jak i w okolicy przez prawie 800 lat.</p><p>W 1810 roku urodził się tu słynny na całym świecie 'Syn miasta', kompozytor romantyczny Robert Schumann.</p><p> Ponadto 21 kwietnia 2016 roku zostalo oficjalnie uznane jako 'Reformation City of Europe'.</p>"
+    },
+
+        {
+            "selector": ".third .text",
+            "text": "WYCIECZKI"
+    },
+
+        {
+            "selector": ".third .content p",
+            "text": "W czasie naszych praktyk zagranicznych zwiedziliśmy wiele zabytków, muzeów oraz różnych innych dostępnych atrakcji, które w czasie wolnym pomogły nam miło i wesoło spędzić czas oraz dowiedzieć się więcej o kulturze i zwyczajach panujących w tej okolicy."
+    },
+
+        {
+            "selector": ".third .info",
+            "HTML": "<ul class='list-unstyled'><li><span>Zwiedziliśmy:</span></li><li><span>Drezno</span></li><li><span>Muzeum Horcha</span></li><li><span>Fabryke volkswagena</span></li><li><span>Berlin</span></li><li><span>Zwizkau</span></li><li><span>Browar w Zwickau</span></li></ul>"
+    },
+
+        {
+            "selector": ".fourth .text",
+            "text": "ZAJĘCIA"
+    },
+
+        {
+            "selector": ".fourth .content p",
+            "text": "Przez 4 tygodnie pod nadzorem swoich opiekunów odbywaliśmy praktykę w FAW Ausbildungszentrum w Zwickau. Ćwiczyliśmy umiejetności z zakresu mechatroniki, informatyki oraz elektroniki."
+    },
+
+        {
+            "selector": "[href='uczestnicy']",
+            "text": "Więcej"
+    },
+
+        {
+            "selector": ".fifth .text",
+            "HTML": "GALERIA"
+    },
+        {
+            "selector": ".fifth .content p",
+            "text": "Zrobiliśmy kilka zdjęć podczas naszego pobytu w niemczech."
+                     },
+        {
+            "selector": ".fifth .content a",
+            "text": "Galeria"
+                     },
+
+        {
+            "selector": "#uczestnicy .background-text h3",
+            "text": "P<br>R<br>A<br>K<br>T<br>Y<br>K<br>I"
+    },
+
+        {
+            "selector": "#uczestnicy .week",
+            "HTML": "<h4 class='show'>Tydzień pierwszy</h4><h4>Tydzień drugi</h4><h4>Tydzień trzeci</h4><h4>Tydzień czwarty</h4>"
+    },
+
+        {
+            "selector": "#uczestnicy .sec:nth-child(1) h2",
+            "text": "Miejsce pracy"
+    },
+
+        {
+            "selector": "#uczestnicy .sec:nth-child(1) span",
+            "text": "Centrum Szkolenia Zawodowego FAW gGmbH Zwickau Akademia Chemnitz"
+    },
+
+        {
+            "selector": "#uczestnicy .sec:nth-child(2) h2",
+            "text": "Wykładowcy"
+    },
+        {
+            "selector": "#uczestnicy .sec:nth-child(2) ul",
+            "HTML": "<li>Pan Geisler - Pneumatyka</li><li>Pan Illing - SPS/Mechatronika</li><li>Pan Schramm - CNC</li><li>Pan Glaß - Projektowanie witryn</li><li>Pan Bornschein - Elektrotechnika</li>"
+    },
+        {
+            "selector": "#uczestnicy .sec:nth-child(3) h2",
+            "text": "Opiekunowie"
+    },
+        {
+            "selector": "#uczestnicy .sec:nth-child(3) div",
+            "HTML": "<span>Pani Aneta Sadrak</span><br><span>Pan Piotr Paluch</span>"
+    },
+
+        {
+            "selector": "#uczestnicy .text",
+            "HTML": "<p class='show'>Pierwszego dnia zostaliśmy oprowadzeni po zakładzie pracy, gdzie odbywalibyśmy praktyki. Przez następny tydzień informatycy wraz z elektronikami, pod okiem pana Schramm uczyli się programowania maszyn CNC służących do obrabiania i frezowania metalu. Pracowali z programem MTS. Mechatronicy natomiast rozpoczęli swoje praktyki od zajęć z pneumatyki z Panem Geisslerem. Była to świetna okazja, aby skonfrontowali swoje doświadczenie. Budowali mniej lub bardziej zaawansowane układy w oparciu o schematy przygotowane przez pana Geisslera i mogli modyfikować je w dowolny sposób. Bardzo spodobała im się swoboda na zajęciach.</p><p>W następnym tygodniu informatycy z elektronikami trafili na zajęcia do pana Bornshein, gdzie uczono ich podstaw lutowania. W celu doskonalenia umiejętności, lutowali czujnik stresu. Pozwoliło to na naukę przydatnej nawet dla informatyka umiejętności, która może przydać im się w przyszłości. Ukończony i działający projekt mogli zabrać ze sobą. Mechatronicy nie zmieniając nauczyciela rozpoczęli zajęcia z elektropneumatyki. </p><p>W trzecim tygodniu informatycy z elektronikami trafili pod opiekę do pana Geisslera na pneumatykę. Mogli poczuć, co robili mechatronicy przez ostatnie tygodnie. Zajęcia te bardzo się im spodobały. Była to dla nich doskonała odskocznia od ciągłego siedzenia przy komputerach. Mechatronicy natomiast trafili do pana Schramm. Doskonali swoje umiejętności w programowaniu maszyn CNC, tak jak to robili informatycy w pierwszym tygodniu, lecz wzbogacone o dodatkowe projekty. Zajęcia pozwoliły również na zobaczenie działania przykładowego programu w praktyce. W środę nasze zajęcia przerwała wizyta w fabryce Volkswagena... Po powrocie przez resztę tygodnia kontynuowaliśmy nasze zajęcia.</p><p>Ostatni tydzień minął informatykom na pracy nad stroną internetową i prezentacją multimedialną. Jedna grupa zajmowała się pisaniem tekstów, selekcją i obróbką grafiki oraz prezentacją multimedialną. Druga grupa zajęła się pisaniem strony internetowej. Mechatronicy wraz z elektronikami natomiast spędzali ten czas na zajęciach z SPS prowadzonych przez pana Illinga. Przez ostatnie dwa dni pracowali z programem SIMATIC przeznaczonym do programowania sterowników SPS. Napisali program do obsługi urządzenia napełniającego butelki, program zamykający i otwierający szlabany na parkingach, oraz program do sterowania światłami na skrzyżowaniu. Praktyka zakończyła się 8 czerwca.</p>"
+    }
+    ]
+}

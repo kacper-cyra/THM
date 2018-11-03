@@ -205,7 +205,8 @@ section a {
 footer {
   font-weight: 700;
   font-size: 1.15rem;
-  padding: 50px 0 20px 0; }
+  padding: 50px 0 2px 0;
+  position: relative; }
   footer .row {
     margin-bottom: 0;
     /*     .label {
@@ -228,7 +229,43 @@ footer {
       padding: 0; }
   footer .authors {
     text-align: center;
-    cursor: pointer; }
+    width: 100%;
+    position: absolute;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    bottom: 0;
+    left: 0; }
+    footer .authors .header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      footer .authors .header i {
+        -webkit-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out; }
+      footer .authors .header > * {
+        cursor: pointer; }
+    footer .authors .authors-content {
+      -webkit-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+      height: 0px;
+      overflow-y: hidden; }
+    footer .authors.active {
+      bottom: 0px; }
+      footer .authors.active i {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg); }
+      footer .authors.active .authors-content {
+        height: 100px; }
 
 .burger-wrapper {
   position: fixed;
@@ -588,6 +625,8 @@ footer {
       height: inherit;
       position: relative;
       width: inherit; }
+      #galeria .display-container .display [vertical] {
+        background-size: contain !important; }
       #galeria .display-container .display .bg {
         width: 100%;
         position: relative;
@@ -600,7 +639,7 @@ footer {
           width: 100%;
           height: 100%;
           opacity: 0;
-          background-size: contain;
+          background-size: cover;
           background-repeat: no-repeat;
           position: absolute;
           -webkit-transition: opacity 0.5s ease-in-out;
@@ -682,14 +721,27 @@ footer {
   .album {
     padding: 0; } }
 
-#uczestnicy {
-  height: 100vh; }
-  #uczestnicy .przebieg {
-    position: relative; }
-    #uczestnicy .przebieg .background-text {
-      position: absolute; }
-      #uczestnicy .przebieg .background-text h3 {
-        font-size: 100px !important; }
+#uczestnicy .przebieg {
+  position: relative; }
+  #uczestnicy .przebieg .background-text {
+    position: absolute;
+    top: 0%;
+    z-index: -5;
+    right: 0%; }
+    #uczestnicy .przebieg .background-text h3 {
+      font-size: 10vw !important;
+      text-transform: uppercase;
+      font-family: 'Signika', sans-serif;
+      white-space: normal;
+      color: #00000060;
+      line-height: 0.75;
+      text-align: center;
+      margin: 0; }
+  #uczestnicy .przebieg .week {
+    position: relative;
+    left: 0;
+    top: 0px;
+    z-index: 10; }
     #uczestnicy .przebieg .week h4 {
       display: none;
       -webkit-clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
@@ -703,21 +755,26 @@ footer {
         display: inline;
         -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
         clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%); }
-    #uczestnicy .przebieg .options {
-      position: absolute;
-      left: 80%; }
-      #uczestnicy .przebieg .options div {
-        width: 25px;
-        height: 25px;
-        background-color: var(--color-third);
-        border-radius: 50%;
-        -webkit-transition: all .3s ease-in-out;
-        -o-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
-        margin: 2px 0;
-        cursor: pointer; }
-        #uczestnicy .przebieg .options div.active {
-          background-color: var(--color-fourth); }
+  #uczestnicy .przebieg .options {
+    position: absolute;
+    left: 660px;
+    top: 50px;
+    z-index: 10; }
+    #uczestnicy .przebieg .options div {
+      width: 25px;
+      height: 25px;
+      background-color: var(--color-third);
+      border-radius: 50%;
+      -webkit-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      margin: 2px 0;
+      cursor: pointer; }
+      #uczestnicy .przebieg .options div.active {
+        background-color: var(--color-fourth); }
+  #uczestnicy .przebieg .pictures {
+    position: relative;
+    height: 400px; }
     #uczestnicy .przebieg .pictures div {
       display: none;
       -webkit-clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
@@ -726,9 +783,9 @@ footer {
       -o-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
       width: inherit;
-      height: 400px;
+      height: 100%;
       position: absolute;
-      top: 50px;
+      top: 10px;
       left: 0; }
       #uczestnicy .przebieg .pictures div.animate {
         display: block; }
@@ -752,6 +809,8 @@ footer {
         background-image: url("../img/zajecia/zajecia3.jpg");
         background-repeat: no-repeat;
         background-size: contain; }
+  #uczestnicy .przebieg .text {
+    position: relative; }
     #uczestnicy .przebieg .text p {
       display: none;
       -webkit-clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
@@ -759,15 +818,25 @@ footer {
       -webkit-transition: all 0.5s ease-in-out;
       -o-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
-      width: 600px;
       font-size: 18px;
       font-weight: 600;
-      position: absolute;
-      top: 0;
-      left: 0; }
+      position: relative;
+      top: 0px;
+      left: 0;
+      mix-blend-mode: multiply;
+      z-index: 10; }
       #uczestnicy .przebieg .text p.animate {
         display: block; }
       #uczestnicy .przebieg .text p.show {
         display: block;
         -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
         clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%); }
+
+#uczestnicy .data .sec {
+  font-size: 17.5px;
+  font-weight: 600; }
+  #uczestnicy .data .sec i {
+    font-size: 80px;
+    margin: 0 calc(50% - 40px); }
+  #uczestnicy .data .sec h3 {
+    margin-top: 12.5px; }

@@ -1,7 +1,8 @@
 footer {
     font-weight: 700;
     font-size: 1.15rem;
-    padding: 50px 0 20px 0;
+    padding: 50px 0 2px 0;
+    position: relative;
 
     .row {
         margin-bottom: 0;
@@ -30,6 +31,42 @@ footer {
 
     .authors {
         text-align: center;
-        cursor: pointer;
+        width: 100%;
+        position: absolute;
+        transition: all .4s ease-in-out;
+        bottom: 0;
+        left: 0;
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i {
+                transition: all .4s ease-in-out;
+            }
+
+            > * {
+                cursor: pointer;
+            }
+        }
+
+        .authors-content {
+            transition: all .4s ease-in-out;
+            height: 0px;
+            overflow-y: hidden;
+        }
+
+        &.active {
+            bottom: 0px;
+
+            i {
+                transform: rotate(180deg);
+            }
+
+            .authors-content {
+                height: 100px;
+            }
+        }
     }
 }

@@ -12,6 +12,7 @@
           galeria.plate = ele;
           galeria.bg.classList.add('bg');
           galeria.bg.classList.remove('plate');
+          ele.getAttribute('vertical') === '' ? galeria.bg.setAttribute('vertical', '') : 0;
           //Ustawienia display-containera
           galeria.scroll = window.pageYOffset;
           galeria.displayCon.style.left = ele.offsetLeft + 'px';
@@ -52,12 +53,15 @@
           function end() {
               galeria.bg.querySelector('.side-bar').classList.add('show');
               galeria.bg.addEventListener('transitionend', end);
+              galeria.bg.backgroundColor = 'white';
               galeria.bg.style.transition = '';
           }
       },
       zoomOut: () => {
+          galeria.bg.backgroundColor = 'transparent';
           galeria.plate.style.backgroundImage = galeria.bg.style.backgroundImage;
           galeria.plate.style.backgroundPosition = '50% 50%';
+          galeria.bg.getAttribute('vertical') === '' ? galeria.plate.setAttribute('vertical', '') : galeria.plate.removeAttribute('vertical');
           galeria.bg.querySelector('.side-bar').classList.remove('show');
           galeria.bg.querySelector('.side-bar').style.display = 'none';
           galeria.bg.querySelector('.next').style.opacity = '0';
@@ -79,7 +83,6 @@
           }, 1020);
       }
   }
-  let cache = {};
 
   let plates = document.querySelectorAll('#galeria .plate');
 
@@ -110,15 +113,29 @@
   function changePhoto(ele) {
       let style = ele.currentStyle || window.getComputedStyle(ele, false);
       let url = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-      //    console.log(url);
       let $next = galeria.bg.querySelector('.next');
+      let vertical;
+      if (ele.getAttribute('vertical') === '') {
+          vertical = true;
+          $next.setAttribute('vertical', '');
+          $next.style.backgroundColor = 'white';
+      } else {
+          $next.removeAttribute('vertical');
+      }
+
       $next.style.backgroundImage = 'url(' + url + ')';
-      ele.getAttribute('vertical') ? $next.style.backgroundSize = 'contain' : $next.style.backgroundSize = 'cover';
       $next.style.opacity = '1';
+
       $next.addEventListener('transitionend', end);
 
       function end() {
           galeria.bg.style.backgroundImage = 'url(' + url + ')';
+          if (vertical) {
+              galeria.bg.setAttribute('vertical', '');
+              $next.style.backgroundColor = '';
+          } else {
+              galeria.bg.removeAttribute('vertical');
+          }
           $next.style.backgroundImage = '';
           $next.style.opacity = '0';
           $next.removeEventListener('transitionend', end);

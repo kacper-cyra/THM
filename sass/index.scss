@@ -20,6 +20,27 @@
         font-size: 30px;
         text-shadow: 1px 1px 0px white;
     }
+
+    .lang {
+        position: absolute;
+        padding: 1.2rem 1rem;
+        font-size: 25px;
+        font-weight: 600;
+        top: 0px;
+        display: flex;
+        flex-direction: column;
+        mix-blend-mode: diference;
+
+        .new-lang {
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            margin: 0 0.4rem;
+
+            &:hover {
+                color: var(--color-fifth);
+            }
+        }
+    }
 }
 
 /*Second*/
@@ -423,7 +444,6 @@
                 top: -35%;
                 z-index: -3;
             }
-
         }
     }
 }

@@ -31,8 +31,13 @@ let carusel = {
         }
 
         function setElement(ele) {
+            let parent = ele.parentElement;
+            ele = parent.children[carusel.active];
             ele.classList.add('animate');
-            ele.classList.add('show');
+            setTimeout(() => {
+                ele.classList.add('show');
+            }, 1)
+
             ele.addEventListener('teansitionend', end);
         }
 

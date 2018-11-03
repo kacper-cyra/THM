@@ -16,6 +16,28 @@
   .main .title {
     font-size: 30px;
     text-shadow: 1px 1px 0px white; }
+  .main .lang {
+    position: absolute;
+    padding: 1.2rem 1rem;
+    font-size: 25px;
+    font-weight: 600;
+    top: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    mix-blend-mode: diference; }
+    .main .lang .new-lang {
+      cursor: pointer;
+      -webkit-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      margin: 0 0.4rem; }
+      .main .lang .new-lang:hover {
+        color: var(--color-fifth); }
 
 /*Second*/
 .second {

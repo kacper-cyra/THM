@@ -1,22 +1,32 @@
 #uczestnicy {
-    height: 100vh;
-
-
-
-
 
     .przebieg {
         position: relative;
 
         .background-text {
             position: absolute;
+            top: 0%;
+            z-index: -5;
+            right: 0%;
 
             h3 {
-                font-size: 100px !important;
+                font-size: 10vw !important;
+                text-transform: uppercase;
+                font-family: 'Signika', sans-serif;
+                white-space: normal;
+                color: #00000060;
+                line-height: 0.75;
+                text-align: center;
+                margin: 0;
             }
         }
 
         .week {
+            position: relative;
+            left: 0;
+            top: 0px;
+            z-index: 10;
+
             h4 {
                 display: none;
                 clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
@@ -35,7 +45,9 @@
 
         .options {
             position: absolute;
-            left: 80%;
+            left: 660px;
+            top: 50px;
+            z-index: 10;
 
             div {
                 width: 25px;
@@ -53,14 +65,17 @@
         }
 
         .pictures {
+            position: relative;
+            height: 400px;
+
             div {
                 display: none;
                 clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
                 transition: all 0.5s ease-in-out;
                 width: inherit;
-                height: 400px;
+                height: 100%;
                 position: absolute;
-                top: 50px;
+                top: 10px;
                 left: 0;
 
                 &.animate {
@@ -99,16 +114,19 @@
         }
 
         .text {
+            position: relative;
+
             p {
                 display: none;
                 clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
                 transition: all 0.5s ease-in-out;
-                width: 600px;
                 font-size: 18px;
                 font-weight: 600;
-                position: absolute;
-                top: 0;
+                position: relative;
+                top: 0px;
                 left: 0;
+                mix-blend-mode: multiply;
+                z-index: 10;
 
                 &.animate {
                     display: block;
@@ -118,6 +136,23 @@
                     display: block;
                     clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
                 }
+            }
+        }
+    }
+
+    .data {
+
+        .sec {
+            font-size: 17.5px;
+            font-weight: 600;
+
+            i {
+                font-size: 80px;
+                margin: 0 calc(50% - 40px);
+            }
+
+            h3 {
+                margin-top: 12.5px;
             }
         }
     }
