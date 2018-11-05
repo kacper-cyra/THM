@@ -4,7 +4,6 @@ let loading = {
     slowest: document.querySelector('.loading div:nth-child(7)'),
     status: 'left',
     start: () => {
-        // loading.object.classList.add('onTop');
         loading.object.classList.add('loading-animation');
         loading.object.style.zIndex = '100';
     },
@@ -13,13 +12,11 @@ let loading = {
         loading.slowest.addEventListener('transitionend', hide);
 
         function hide() {
-            //  loading.object.classList.remove('onTop');
             loading.object.style.zIndex = '-1';
             loading.slowest.removeEventListener('transitionend', hide);
         }
     },
     reverseFinish: () => {
-        // loading.object.classList.add('onTop');
         loading.object.classList.remove('loading-finish');
         loading.object.style.zIndex = '100';
     },
@@ -28,7 +25,6 @@ let loading = {
         loading.slowest.addEventListener('transitionend', hide);
 
         function hide() {
-            //loading.object.classList.remove('onTop');
             loading.object.style.zIndex = '-1';
             loading.slowest.removeEventListener('transitionend', hide);
         }
@@ -197,7 +193,6 @@ document.addEventListener('click', (e) => {
         else {
             e.preventDefault()
             let target = e.target.getAttribute('href');
-            // console.log(target);
             target = navigation.pages[target];
             history.pushState({
                 nav: true,

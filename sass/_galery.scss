@@ -212,11 +212,11 @@
     }
 }
 
-@media only screen and (min-width: 100px) {
+@media only screen and (min-width: 1000px) {
     #galeria {
         .side-bar {
             &:hover {
-                transform: translateX(20px);
+                transform: translateX(20px) !important;
             }
         }
     }

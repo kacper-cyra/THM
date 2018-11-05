@@ -8,7 +8,7 @@ function changeLanguage(e) {
         let options = {
             method: "POST",
             credentials: "same-origin",
-            mode: "same-origin",
+            mode: "cors",
             headers: {
                 "Content-Type": "application/json; charset=utf-8",
             },
