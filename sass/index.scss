@@ -24,7 +24,7 @@
     .lang {
         position: absolute;
         padding: 1.2rem 1rem;
-        font-size: 25px;
+        font-size: 27px;
         font-weight: 600;
         top: 0px;
         display: flex;
@@ -448,11 +448,15 @@
     }
 }
 
+//------------------------------------------------------------
+//----------------------Media Query---------------------------
+//------------------------------------------------------------
+
 @media only screen and (max-width: 500px) {
 
     //SECOND
     .second {
-        margin: 100px 0 120px 0;
+        margin: 100px 0 40px 0;
 
         .background {
             .background-text {
@@ -487,7 +491,7 @@
 
         .background {
             .background-text {
-                margin-top: -55px;
+                margin-top: -25px;
 
                 .col {
                     margin-left: 0px !important;
@@ -526,7 +530,7 @@
         padding: 200px 0 0px 0;
 
         .background {
-            margin-top: 360px;
+            margin-top: 400px;
 
             .background-text {
                 .col {
@@ -626,6 +630,38 @@
                 &:nth-child(2) {
                     left: calc(90% - 25px);
                     top: 25%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+    #index {
+        .second {
+            margin: 40px 0;
+        }
+
+        .third {
+            margin: 50px 0;
+
+            .info {
+                right: -70px !important;
+            }
+        }
+
+        .fourth {
+            padding-bottom: 40px;
+        }
+
+        .fifth {
+            margin: 70px 0 20px 0;
+
+            .photos {
+                div {
+                    &:nth-child(3) {
+                        top: 7rem;
+                    }
                 }
             }
         }

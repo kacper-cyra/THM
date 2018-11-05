@@ -121,8 +121,8 @@
                     background-color: #fefefeaa;
                     opacity: 0;
 
-                    &:hover {
-                        transform: translateX(20px);
+                    &.hover {
+                        transform: translateX(20px) !important;
                     }
 
                     [photo] {
@@ -133,6 +133,7 @@
                         padding-top: 56.25%;
                         margin: 2.5px 0 2.5px 0;
                         cursor: pointer;
+                        background-position: center;
 
                         &:nth-child(1) {
                             margin: 0 0 2.5px 0;
@@ -197,7 +198,26 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .album {
-        padding: 0;
+    #galeria {
+        .group {
+            > .row {
+                margin-bottom: 0;
+            }
+        }
+
+        .album {
+            padding: 0;
+            margin: 3px;
+        }
+    }
+}
+
+@media only screen and (min-width: 100px) {
+    #galeria {
+        .side-bar {
+            &:hover {
+                transform: translateX(20px);
+            }
+        }
     }
 }

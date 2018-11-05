@@ -23,7 +23,6 @@ function changeLanguage(e) {
                 return response.json()
             })
             .then((res) => {
-                console.log(res);
                 newLanguage(res.lang);
             })
             .catch((err) => {
@@ -31,12 +30,27 @@ function changeLanguage(e) {
             });
 
         function newLanguage(object) {
-            object.forEach((item) => {
-                console.log(item);
-                let ele = document.querySelector(item.selector);
-                console.log(ele);
-                item.HTML ? ele.innerHTML = item.HTML : ele.textContent = item.text;
-            });
+            loading.status === 'left' ? 0 : loading.setLeft();
+            loading.setHeight();
+            loading.start();
+            bodyScrollLock.disableBodyScroll(loading.object);
+            loading.slowest.addEventListener('transitionend', change);
+
+            function change() {
+                object.forEach((item) => {
+                    let ele = document.querySelector(item.selector);
+                    item.HTML ? ele.innerHTML = item.HTML : ele.textContent = item.text;
+                });
+                loading.slowest.removeEventListener('transitionend', change);
+                loading.finish();
+                loading.slowest.addEventListener('transitionend', finish);
+            };
+
+            function finish() {
+                bodyScrollLock.enableBodyScroll(loading.object);
+                loading.setLeft();
+                loading.slowest.removeEventListener('transitionend', finish)
+            }
         }
     };
 };

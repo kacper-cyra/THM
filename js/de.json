@@ -1,0 +1,92 @@
+{
+    "lang": [{
+            "selector": ".second .content",
+            "HTML": "<span class='title'><h2>Über Zwickau</h2></span><p>Zwickau hat rund 90.000 Einwohner. Es ist die viertgrößte Stadt in Sachsen im Zentrum des Südwestens des Landes.</p><p>Das Gebiet von Zwickau wurde 1118 zum ersten Mal erwähnt. Fast 800 Jahre lang wurde hier und in der Region Kohle gefördert.</p><p>Im Jahr 1810 wurde er hier geboren, die weltbekannte ‚Sohn der Stadt‘, ein romantischen Komponisten Robert Schumann.</p><p>Darüber hinaus wurde es am 21. April 2016 offiziell als „Reformationsstadt Europas“ anerkannt.</p>"
+    },
+
+        {
+            "selector": ".third .text",
+            "text": "AUSFLÜGE"
+    },
+
+        {
+            "selector": ".third .content p",
+            "text": "Während unserer Auslandspraktika besuchten wir viele Denkmäler, Museen und verschiedene andere Attraktionen, was uns in der Freizeit half, eine schöne und unterhaltsame Zeit zu verbringen und mehr über die Kultur und Bräuche der Region zu erfahren."
+    },
+
+        {
+            "selector": ".third .info",
+            "HTML": "<ul class='list-unstyled'><li><span>Wir besuchten:</span></li><li><span>Dresden</span></li><li><span>Horch Museum</span></li><li><span>Volkswagen Fabrik</span></li><li><span>Berlin</span></li><li><span>Zwizkau</span></li><li><span>Brauerei in Zwickau</span></li></ul>"
+    },
+
+        {
+            "selector": ".fourth .text",
+            "text": "KLASSEN"
+    },
+
+        {
+            "selector": ".fourth .content p",
+            "text": "Unter der Aufsicht unserer Betreuerinnen und Betreuer absolvierten wir 4 Wochen lang ein Praktikum im FAW Ausbildungszentrum in Zwickau. Wir haben Mechatronik, Informatik und Elektronik geübt."
+    },
+
+        {
+            "selector": "[href='uczestnicy']",
+            "text": "Mehr"
+    },
+
+        {
+            "selector": ".fifth .text",
+            "HTML": "GALERIE"
+    },
+        {
+            "selector": ".fifth .content p",
+            "text": "Wir haben während unseres Aufenthalts in Deutschland Fotos gemacht."
+                     },
+        {
+            "selector": ".fifth .content a",
+            "text": "Galerie"
+                     },
+
+        {
+            "selector": "#uczestnicy .background-text h3",
+            "HTML": "P<br>R<br>A<br>K<br>T<br>I<br>K<br>E<br>N"
+    },
+
+        {
+            "selector": "#uczestnicy .week",
+            "HTML": "<h4 class='show'>Erste Woche</h4><h4>Zweite Woche</h4><h4>Dritte Woche </h4><h4>Vierte Woche</h4>"
+    },
+
+        {
+            "selector": "#uczestnicy .data .sec:nth-child(1) h3",
+            "text": "Arbeitsort"
+    },
+
+        {
+            "selector": "#uczestnicy .data .sec:nth-child(1) span",
+            "text": "FAW gGmbH Zwickau Akademia Chemnitz"
+    },
+
+        {
+            "selector": "#uczestnicy .data .sec:nth-child(2) h3",
+            "text": "Dozenten"
+    },
+        {
+            "selector": "#uczestnicy .data .sec:nth-child(2) ul",
+            "HTML": "<li>Lehrer Geisler - Pneumatik</li><li>Lehrer Illing - SPS/Mechatronik</li><li>Lehrer Schramm - CNC</li><li>Lehrer Glaß - Website-Design</li><li>PLehrer Bornschein - Elektrotechnik</li>"
+    },
+        {
+            "selector": "#uczestnicy .data .sec:nth-child(3) h3",
+            "text": "Wächter"
+    },
+        {
+            "selector": "#uczestnicy .data .sec:nth-child(3) div",
+            "HTML": "<span>Frau Aneta Sadrak</span><br><span>Mann Piotr Paluch</span>"
+    },
+
+        {
+            "selector": "#uczestnicy .text",
+            "HTML": "<p class='show'>Am gleichen Tag wurden uns die Ausbildungsstätte, unsere Arbeitsplätze für das Praktikum und die Umgebung vorgestellt.In den folgenden Tagen konnten wir, bei der Arbeit an den Computern, neue Fähigkeiten im Umgang mit Koordinaten erwerben und unser Wissen darüber erweitern. Unter der Leitung von Herrn Schramm erlernten wir dann die Programmierung von CNC-Werkzeugmaschinen zum Drehen und Fräsen. Mit der MTS-Software und dem jeweiligen Emulator haben wir dann das Programm für die Maschine erstellt.</p><p>Der Montag der zweiten Woche war in Deutschland ein Feiertag und wir hatten frei. So begann die Arbeitswoche für uns erst am Dienstag. Herr Bornschein hat uns die Grundlagen des Lötens beigebracht. Um die eben erworbenen Kenntnisse zu verbessern und zu festigen haben wir einen elektronischen Stress-Sensor gebaut. Nach der Fertigstellung konnte jeder seinen selbst gefertigten Sensor mit nach Hause nehmen. Am Freitag stand „Logikgatter“ auf dem Stundenplan. Wir erlernten die Grundlagen mit der Software LOGO.</p><p>Herr Geißler unterrichtete und betreute uns in dieser Zeit. Das Diagramm welches mit Hilfe der LOGO Software erstellt wurde, haben wir zum Aufbau eines pneumatischen Systems verwendet. Am Mittwoch endete unsere Ausbildung früher als sonst. Der Besuch der VW-Werkes stand auf dem Plan. Die letzten beiden Tage der Woche arbeiteten wir an unserem pneumatischen System weiter.</p><p>Aufgeteilt in mehrere Gruppen haben wir mit der Erstellung der Webseite und der Präsentation betraut. Das Erstellen und Übersetzen der der Texte, die Bearbeitung der Bilder und Videos, die Erstellung des HTML, Java sowie CSS-Codes und die Präsentation wurde in Teams erledigt. Dabei haben wir und gegenseitig unterstützt und halfen beim Erstellen der Webseite. Unser Abenteuer „Praktikum in Deutschland“ ist nun zu Ende gegangen. Es erlaubte uns unser Wissen zu erweitern, neue Fähigkeiten zu anzueignen und unserer Freizeit in einer angenehmen Atmosphäre zu verringen. Unser Praktikum endete am 8. Juni</p>"
+    }
+    ]
+}

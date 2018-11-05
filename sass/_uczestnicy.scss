@@ -45,9 +45,11 @@
 
         .options {
             position: absolute;
-            left: 660px;
-            top: 50px;
-            z-index: 10;
+            left: 275px;
+            top: 405px;
+            z-index: 12;
+            display: flex;
+            flex-wrap: nowrap;
 
             div {
                 width: 25px;
@@ -55,7 +57,7 @@
                 background-color: var(--color-third);
                 border-radius: 50%;
                 transition: all .3s ease-in-out;
-                margin: 2px 0;
+                margin: 2px;
                 cursor: pointer;
 
                 &.active {
@@ -69,14 +71,12 @@
             height: 400px;
 
             div {
+                margin-top: 10px;
                 display: none;
                 clip-path: polygon(0% 100%, 0% 100%, 0% 0%, 0% 0%);
                 transition: all 0.5s ease-in-out;
                 width: inherit;
                 height: 100%;
-                position: absolute;
-                top: 10px;
-                left: 0;
 
                 &.animate {
                     display: block;
@@ -115,6 +115,7 @@
 
         .text {
             position: relative;
+            min-height: 260px;
 
             p {
                 display: none;
@@ -122,9 +123,6 @@
                 transition: all 0.5s ease-in-out;
                 font-size: 18px;
                 font-weight: 600;
-                position: relative;
-                top: 0px;
-                left: 0;
                 mix-blend-mode: multiply;
                 z-index: 10;
 
@@ -148,11 +146,42 @@
 
             i {
                 font-size: 80px;
-                margin: 0 calc(50% - 40px);
+                //   margin: 0 calc(50% - 40px);
             }
 
             h3 {
                 margin-top: 12.5px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #uczestnicy {
+        .przebieg {
+            .pictures {
+                height: 240px;
+            }
+
+            .options {
+                top: 210px;
+                left: initial;
+                right: 0;
+
+                div {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .background-text {
+                h3 {
+                    font-size: 200px !important;
+                }
+            }
+
+            .text {
+                min-height: 600px;
             }
         }
     }

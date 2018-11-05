@@ -79,10 +79,10 @@ main {
     border-radius: 50%;
     border: solid 7px var(--color-fourth);
     transition: transform 1.25s ease-out,
-        border 1s ease-in-out;
+        opacity 1s ease-in-out;
 
     &:hover {
-        border: solid 7px transparent;
+        opacity: 0;
     }
 }
 
@@ -175,7 +175,6 @@ section {
 
 @import 'scroll.scss';
 @import 'footer.scss';
-@import 'menu.scss';
 @import 'grid.scss';
 @import 'loading.scss';
 @import 'galery.scss';

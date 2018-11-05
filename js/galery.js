@@ -2,6 +2,9 @@
   let galeria = {
       item: document.getElementById('galeria'),
       displayCon: document.querySelector('#galeria .display-container'),
+      menu: () => {
+          return document.querySelector('#galeria .display .side-bar')
+      },
       bg: 0,
       plate: 0,
       display: document.querySelector('#galeria .display'),
@@ -87,11 +90,17 @@
   let plates = document.querySelectorAll('#galeria .plate');
 
   function setGallery() {
-      plates.forEach((item) => {
-          item.getAttribute('size') === 'x2' ? item.style.height = (item.offsetWidth / 2) + 'px' : 0;
-          item.getAttribute('size') === 'y2' ? item.style.height = (item.offsetWidth * 2) + 'px' : 0;
-          item.getAttribute('size') ? 0 : item.style.height = item.offsetWidth + 'px';
-      });
+      if (window.innerWidth > 600) {
+          plates.forEach((item) => {
+              item.getAttribute('size') === 'x2' ? item.style.height = (item.offsetWidth / 2) + 'px' : 0;
+              item.getAttribute('size') === 'y2' ? item.style.height = (item.offsetWidth * 2) + 'px' : 0;
+              item.getAttribute('size') ? 0 : item.style.height = item.offsetWidth + 'px';
+          });
+      } else {
+          plates.forEach((item) => {
+              item.style.height = item.offsetWidth + 'px';
+          });
+      }
   }
   setGallery();
   window.addEventListener('resize', setGallery);
@@ -142,6 +151,27 @@
       }
   }
 
+  //Rozwijanie menu bocznego na urządzeniach z dotykiem
+  let start = 0;
+  let x = 0;
+  galeria.item.addEventListener('touchstart', tStart);
+
+  function tStart(e) {
+      start = e.touches[0].pageX;
+      galeria.item.addEventListener('touchmove', tMove);
+  }
+
+  function tMove(e) {
+      x = e.touches[0].pageX;
+      let menu = galeria.menu();
+      console.log(start - x)
+      if (start - x < -100 && menu.classList.contains('hover')) {
+          menu.classList.remove('hover');
+      } else if (start - x > 100) {
+          menu.classList.add('hover')
+      } else return 0;
+  }
+
   //----------------------
   //Lazy Load
   //----------------------
@@ -178,7 +208,7 @@
               //Sprawdza, czy zdjęcie nie jest załadowane
               if (ele.style.backgroundImage === '') {
                   let load = document.createElement('img');
-                  let src = '/img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
+                  let src = '/THM/img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
                   //console.log(src);
                   load.addEventListener('load', loadedPhoto);
                   load.setAttribute('src', src);

@@ -49,7 +49,7 @@
 
         {
             "selector": "#uczestnicy .background-text h3",
-            "text": "P<br>R<br>A<br>K<br>T<br>Y<br>K<br>I"
+            "HTML": "P<br>R<br>A<br>K<br>T<br>Y<br>K<br>I"
     },
 
         {
@@ -58,29 +58,29 @@
     },
 
         {
-            "selector": "#uczestnicy .sec:nth-child(1) h2",
+            "selector": "#uczestnicy .data .sec:nth-child(1) h3",
             "text": "Miejsce pracy"
     },
 
         {
-            "selector": "#uczestnicy .sec:nth-child(1) span",
+            "selector": "#uczestnicy .data .sec:nth-child(1) span",
             "text": "Centrum Szkolenia Zawodowego FAW gGmbH Zwickau Akademia Chemnitz"
     },
 
         {
-            "selector": "#uczestnicy .sec:nth-child(2) h2",
+            "selector": "#uczestnicy .data .sec:nth-child(2) h3",
             "text": "Wykładowcy"
     },
         {
-            "selector": "#uczestnicy .sec:nth-child(2) ul",
+            "selector": "#uczestnicy .data .sec:nth-child(2) ul",
             "HTML": "<li>Pan Geisler - Pneumatyka</li><li>Pan Illing - SPS/Mechatronika</li><li>Pan Schramm - CNC</li><li>Pan Glaß - Projektowanie witryn</li><li>Pan Bornschein - Elektrotechnika</li>"
     },
         {
-            "selector": "#uczestnicy .sec:nth-child(3) h2",
+            "selector": "#uczestnicy .data .sec:nth-child(3) h3",
             "text": "Opiekunowie"
     },
         {
-            "selector": "#uczestnicy .sec:nth-child(3) div",
+            "selector": "#uczestnicy .data .sec:nth-child(3) div",
             "HTML": "<span>Pani Aneta Sadrak</span><br><span>Pan Piotr Paluch</span>"
     },
 

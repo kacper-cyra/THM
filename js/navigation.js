@@ -4,27 +4,32 @@ let loading = {
     slowest: document.querySelector('.loading div:nth-child(7)'),
     status: 'left',
     start: () => {
-        loading.object.classList.add('onTop');
+        // loading.object.classList.add('onTop');
         loading.object.classList.add('loading-animation');
+        loading.object.style.zIndex = '100';
     },
     finish: () => {
         loading.object.classList.add('loading-finish');
         loading.slowest.addEventListener('transitionend', hide);
 
         function hide() {
-            loading.object.classList.remove('onTop');
+            //  loading.object.classList.remove('onTop');
+            loading.object.style.zIndex = '-1';
             loading.slowest.removeEventListener('transitionend', hide);
         }
     },
     reverseFinish: () => {
-        loading.object.classList.add('onTop');
+        // loading.object.classList.add('onTop');
         loading.object.classList.remove('loading-finish');
+        loading.object.style.zIndex = '100';
     },
     back: () => {
         loading.object.classList.remove('loading-animation');
+        loading.slowest.addEventListener('transitionend', hide);
 
         function hide() {
-            loading.object.classList.remove('onTop');
+            //loading.object.classList.remove('onTop');
+            loading.object.style.zIndex = '-1';
             loading.slowest.removeEventListener('transitionend', hide);
         }
     },
@@ -43,7 +48,7 @@ let loading = {
             items.forEach((item) => {
                 item.classList.add('delay');
             });
-        }, 50);
+        }, 1);
     },
     setRight: () => {
         let items = document.querySelectorAll('.loading .delay');
@@ -57,7 +62,7 @@ let loading = {
             items.forEach((item) => {
                 item.classList.add('delay');
             });
-        }, 50);
+        }, 1);
     }
 };
 

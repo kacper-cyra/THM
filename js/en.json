@@ -32,7 +32,7 @@
             "HTML": "GALLERY"
     }, {
             "selector": ".fifth .content p",
-            "text": "We have made some photos during our stay in Germany!"
+            "text": "We made some photos during our stay in Germany!"
     },
         {
             "selector": ".fifth .content a",
@@ -48,27 +48,27 @@
             "HTML": "<h4 class='show'>First week</h4><h4>Second week</h4><h4>Third week</h4><h4>Fourth week</h4>"
     },
         {
-            "selector": "#uczestnicy .sec:nth-child(1) h2",
+            "selector": "#uczestnicy .data .sec:nth-child(1) h3",
             "text": "Workplace"
     },
         {
-            "selector": "#uczestnicy .sec:nth-child(1) span",
+            "selector": "#uczestnicy .data .sec:nth-child(1) span",
             "text": "FAW gGmbH Zwickau Akademia Chemnitz"
     },
         {
-            "selector": "#uczestnicy .sec:nth-child(2) h2",
+            "selector": "#uczestnicy .data .sec:nth-child(2) h3",
             "text": "Lecturers"
     },
         {
-            "selector": "#uczestnicy .sec:nth-child(2) ul",
+            "selector": "#uczestnicy .data .sec:nth-child(2) ul",
             "HTML": "<li>Mr. Geisler - Pneumatics</li><li>Mr. Illing - SPS/Mechatronics</li><li>Mr. Schramm - CNC</li><li>Mr. Glaß - Website design</li><li>Mr. Bornschein - Electrotechnics</li>"
     },
         {
-            "selector": "#uczestnicy .sec:nth-child(3) h2",
+            "selector": "#uczestnicy .data .sec:nth-child(3) h3",
             "text": "Carers"
     },
         {
-            "selector": "#uczestnicy .sec:nth-child(3) div",
+            "selector": "#uczestnicy .data .sec:nth-child(3) div",
             "HTML": "<span>Mrs. Aneta Sadrak</span><br><span>Mr. Piotr Paluch</span>"
     },
         {

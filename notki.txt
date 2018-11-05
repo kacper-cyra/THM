@@ -1,1 +1,2 @@
-Przed wrzuceniem na serwer usunąć z lazy loading,w url '/THM'
+Przed wrzuceniem na serwer usunąć z lazy loading, w url '/THM' 
+Zmienić url w htaccess
