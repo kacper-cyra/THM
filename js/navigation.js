@@ -167,7 +167,6 @@ let navigation = {
 }
 
 window.onpopstate = (e) => {
-    //  console.log(e.state);
     //Jeśli przekierowanie bez animacji przejścia
     e.preventDefault();
     if (e.state.nav === false) {
@@ -176,7 +175,6 @@ window.onpopstate = (e) => {
         } else return 0;
     } else if (e.state.page < navigation.pages[navigation.active].page) {
         e.preventDefault();
-        console.log(navigation.pages[navigation.active]);
         navigation.animateBackwards(e.state);
     } else {
         navigation.animateTo(e.state);

@@ -164,10 +164,9 @@
   function tMove(e) {
       x = e.touches[0].pageX;
       let menu = galeria.menu();
-      console.log(start - x)
-      if (start - x < -100 && menu.classList.contains('hover')) {
+      if (start - x < -75 && menu.classList.contains('hover')) {
           menu.classList.remove('hover');
-      } else if (start - x > 100) {
+      } else if (start - x > 75) {
           menu.classList.add('hover')
       } else return 0;
   }
@@ -209,7 +208,6 @@
               if (ele.style.backgroundImage === '') {
                   let load = document.createElement('img');
                   let src = '/THM/img/' + lazyLoad.loading[0] + '/' + lazyLoad.loading[0] + (lazyLoad.loading[1] + 1) + '.jpg';
-                  //console.log(src);
                   load.addEventListener('load', loadedPhoto);
                   load.setAttribute('src', src);
 
